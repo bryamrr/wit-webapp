@@ -1,0 +1,93 @@
+header {
+  box-sizing: border-box;
+  height: 84px;
+  padding: .75em 3em;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.logo {
+  margin-right: 5em;
+  width: 60px;
+  img {
+    width: 100%;
+  }
+}
+
+nav {
+  ul {
+    line-height: 60px;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    margin-right: 2em;
+    a {
+      color: white;
+      transition: color .2s linear;
+      text-decoration: none;
+      &:hover {
+        color: $yellow;
+        cursor:pointer;
+      }
+    }
+  }
+}
+
+.logo, nav {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.logo-purple { display: none; }
+
+.login-box { display: none; }
+
+.main-title {
+  padding: 0 1.5em;
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  .title {
+    margin-bottom: 2em;
+  }
+}
+
+.main-home {
+  color: white;
+  button {
+    transition: all .5s ease;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  #typed, h2, .typed-cursor {
+    font-size: 2.5em;
+    font-weight: bold;
+  }
+  h2 {
+    margin-bottom: .3em;
+  }
+
+  .overlay {
+    background-color: rgba($purple, 0.5);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .video-wrapper {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .video-playing {
+    width: 100%;
+  }
+}
