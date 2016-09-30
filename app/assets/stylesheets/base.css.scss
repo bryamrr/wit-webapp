@@ -4,10 +4,20 @@ body {
 }
 
 button {
-  background-color: $purple;
+  background: rgba(white, .8);
   border: none;
   border-radius: 15px;
-  color: white;
+  color: $purple;
   cursor: pointer;
-  padding: .5em 2em;
+  padding: .7em 2em;
+}
+
+h2 { font-size: $h2; }
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+  }
 }

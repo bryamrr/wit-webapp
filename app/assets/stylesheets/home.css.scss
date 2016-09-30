@@ -1,15 +1,25 @@
 header {
+  background-color: transparent;
   box-sizing: border-box;
-  height: 84px;
+  height: 74px;
   padding: .75em 3em;
   position: absolute;
+  transition: all .5s ease;
   top: 0;
   width: 100%;
+  z-index: 1;
+  &.scrolled {
+    background-color: white;
+    position: fixed;
+    .logo-white { display: none; }
+    .logo-purple { display: inline-block; }
+    a { color: $purple; }
+  }
 }
 
 .logo {
   margin-right: 5em;
-  width: 60px;
+  width: 50px;
   img {
     width: 100%;
   }
@@ -17,7 +27,7 @@ header {
 
 nav {
   ul {
-    line-height: 60px;
+    line-height: 50px;
     margin: 0;
     padding: 0;
   }
@@ -27,11 +37,7 @@ nav {
     a {
       color: white;
       transition: color .2s linear;
-      text-decoration: none;
-      &:hover {
-        color: $yellow;
-        cursor:pointer;
-      }
+      &:hover { color: $yellow; }
     }
   }
 }
@@ -45,6 +51,8 @@ nav {
 
 .login-box { display: none; }
 
+/* MAIN SECTION */
+
 .main-title {
   padding: 0 1.5em;
   position: absolute;
@@ -54,7 +62,7 @@ nav {
   width: 100%;
   transform: translate(-50%, -50%);
   .title {
-    margin-bottom: 2em;
+    margin-bottom: 2.5em;
   }
 }
 
@@ -66,8 +74,8 @@ nav {
       transform: scale(1.1);
     }
   }
-  #typed, h2, .typed-cursor {
-    font-size: 2.5em;
+  #typed, .typed-cursor {
+    @extend h2;
     font-weight: bold;
   }
   h2 {
@@ -75,7 +83,7 @@ nav {
   }
 
   .overlay {
-    background-color: rgba($purple, 0.5);
+    background-color: rgba($purple, 0.6);
     position: absolute;
     top: 0;
     right: 0;
@@ -91,3 +99,4 @@ nav {
     width: 100%;
   }
 }
+
