@@ -1,0 +1,255 @@
+<section class="main-home">
+	<div class="overlay"></div>
+  <div class="video-wrapper">
+    <%= video_tag "video.mp4", :autoplay => true, :loop => true, :class => 'video-playing autoplay' %>
+  </div>
+	<header>
+    <div class="logo">
+      <a href="/">
+        <%= image_tag("logo-white.png", class: "logo-white") %>
+        <%= image_tag("logo-purple.png", class: "logo-purple") %>
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><%= link_to "Cursos", "/cursos" %></li>
+        <li><%= link_to "¡Gana dinero!", "/gana-dinero" %></li>
+        <li><%= link_to "Verificar certificado", "/verificar-certificado" %></li>
+      </ul>
+    </nav>
+    <div class="login-box">
+      <%= link_to "Campus virtual", "/campus" %>
+      <button>¡Regístrate!</button>
+    </div>
+	</header>
+  <div class="main-title">
+    <div class="title">
+      <h2>Cursos Online para...</h2>
+      <div id="typed-strings">
+        <p>Impulsar tu carrera</p>
+        <p>Aprender a tu propio ritmo</p>
+        <p>Ganar más dinero</p>
+        <p>Empoderar tu talento</p>
+        <p>Emprender un negocio</p>
+        <p>Desarrollar una habilidad</p>
+      </div>
+      <span id="typed"></span>
+    </div>
+    <button>¡Comienza hoy!</button>
+  </div>
+</section>
+
+<section class="courses">
+  <h3>¡Estos cursos son especialmente para ti!</h3>
+  <p class="tagline">Puedes adquirirlos con cualquier tarjeta de crédito o débito y depósitos (agente BCP)</p>
+
+  <div class="flex-container">
+    <article class="course">
+      <div class="course-image">
+        <%= image_tag("angular2.png") %>
+      </div>
+      <div class="course-title">
+        <h4>Título del curso</h4>
+      </div>
+      <div class="course-details">
+        <div class="course-time">
+          <i class="fa fa-clock-o" aria-hidden="true"></i>
+          <span>2h 43min</span>
+        </div>
+        <div class="course-price">
+          S/. 50
+        </div>
+      </div>
+    </article>
+    <article class="course">
+      <div class="course-image">
+        <%= image_tag("angular2.png") %>
+      </div>
+      <div class="course-title">
+        <h4>Título del curso</h4>
+      </div>
+      <div class="course-details">
+        <div class="course-time">
+          <i class="fa fa-clock-o" aria-hidden="true"></i>
+          <span>2h 43min</span>
+        </div>
+        <div class="course-price">
+          S/. 50
+        </div>
+      </div>
+    </article>
+    <article class="course">
+      <div class="course-image">
+        <%= image_tag("angular2.png") %>
+      </div>
+      <div class="course-title">
+        <h4>Título del curso</h4>
+      </div>
+      <div class="course-details">
+        <div class="course-time">
+          <i class="fa fa-clock-o" aria-hidden="true"></i>
+          <span>2h 43min</span>
+        </div>
+        <div class="course-price">
+          S/. 50
+        </div>
+      </div>
+    </article>
+    <article class="course">
+      <div class="course-image">
+        <%= image_tag("angular2.png") %>
+      </div>
+      <div class="course-title">
+        <h4>Título del curso</h4>
+      </div>
+      <div class="course-details">
+        <div class="course-time">
+          <i class="fa fa-clock-o" aria-hidden="true"></i>
+          <span>2h 43min</span>
+        </div>
+        <div class="course-price">
+          S/. 50
+        </div>
+      </div>
+    </article>
+    <article class="course">
+      <div class="course-image">
+        <%= image_tag("angular2.png") %>
+      </div>
+      <div class="course-title">
+        <h4>Título del curso</h4>
+      </div>
+      <div class="course-details">
+        <div class="course-time">
+          <i class="fa fa-clock-o" aria-hidden="true"></i>
+          <span>2h 43min</span>
+        </div>
+        <div class="course-price">
+          S/. 50
+        </div>
+      </div>
+    </article>
+    <article class="course">
+      <div class="course-image">
+        <%= image_tag("angular2.png") %>
+      </div>
+      <div class="course-title">
+        <h4>Título del curso</h4>
+      </div>
+      <div class="course-details">
+        <div class="course-time">
+          <i class="fa fa-clock-o" aria-hidden="true"></i>
+          <span>2h 43min</span>
+        </div>
+        <div class="course-price">
+          S/. 50
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <button>Más cursos...</button>
+</section>
+
+<section class="mission">
+  <!-- Overlay -->
+  <p>"Somos una plataforma online, cuyo propósito es brindarte los mejores conocimientos del mundo"</p>
+</section>
+
+<section class="why">
+  <h3>¿Por qué estudiar en Wit University?</h3>
+
+  <div class="flex-container">
+    <article class="reason">
+      <%= image_tag("reasons/experto.png") %>
+      <h4>Expertos</h4>
+      <p>Aprenderás de los mejores profesionales y especialistas</p>
+    </article>
+    <article class="reason">
+      <%= image_tag("reasons/libertad.png") %>
+      <h4>Libertad</h4>
+      <p>Aprende a tu propio ritmo, desde cualquier lugar y dispositivo</p>
+    </article>
+    <article class="reason">
+      <%= image_tag("reasons/plataforma.png") %>
+      <h4>Plataforma</h4>
+      <p>Clases 100% online, con acceso las 24 horas del día</p>
+    </article>
+    <article class="reason">
+      <%= image_tag("reasons/ahorro.png") %>
+      <h4>Ahorro</h4>
+      <p>¡Ahorra tiempo y dinero! <br />Sin horarios, ni desplazamientos</p>
+    </article>
+    <article class="reason">
+      <%= image_tag("reasons/certificado.png") %>
+      <h4>Certificado</h4>
+      <p>Por cada curso concluido obtendrás un certificado</p>
+    </article>
+    <article class="reason">
+      <%= image_tag("reasons/ganar.png") %>
+      <h4>Gana</h4>
+      <p>Ganarás una beca y dinero por invitar a tus amigos</p>
+    </article>
+  </div>
+</section>
+
+<section class="motivation">
+  <p><strong>No dejes</strong> de lado lo más importante Aprende a <strong>tu propio ritmo</strong> <br />Aprende <strong>sin límites</strong></p>
+  <button>¡Comienza hoy!</button>
+</section>
+
+<footer>
+  <div class="flex-container">
+    <div class="footer-links">
+      <h5>Wit University</h5>
+      <ul>
+        <li><%= link_to "Cursos", "/cursos" %></li>
+        <li><%= link_to "¡Gana dinero!", "/gana-dinero" %></li>
+        <li><%= link_to "Verificar certificado", "/verificar-certificado" %></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h5>Legalidad</h5>
+      <ul>
+        <li><%= link_to "Preguntas frecuentes", "/faq" %></li>
+        <li><%= link_to "Términos y Condiciones", "/terminos-condiciones" %></li>
+        <li><%= link_to "Política y privacidad", "/politica-privacidad" %></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h5>Contáctanos</h5>
+      <ul>
+        <li>info@wituniversity.com</li>
+        <li><i></i> +51 987654321</li>
+        <li>+51 01 123456</li>
+      </ul>
+    </div>
+    <div class="footer-links center">
+      <h5>Síguenos</h5>
+      <div class="social-links">
+        <a href="#">
+        <span class="fa-stack fa-lg facebook">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+        </span>
+        </a>
+        <a href="#">
+        <span class="fa-stack fa-lg twitter">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+        </span>
+        </a>
+        <a href="#">
+        <span class="fa-stack fa-lg youtube">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+        </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="copyright">
+  Copyright © 2016 Wit University S.A.C.
+  <%= image_tag("logo-white.png", class: "logo-footer") %>
+</div>
