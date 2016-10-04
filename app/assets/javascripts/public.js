@@ -13,8 +13,8 @@ $(window).scroll(function() {
   var scroll = $(window).scrollTop();
 
   if (scroll >= 74) {
-    $("header").addClass("scrolled");
+    $(".public-home header").addClass("scrolled");
   } else {
-    $("header").removeClass("scrolled");
+    $(".public-home header").removeClass("scrolled");
   }
 });

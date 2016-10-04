@@ -1,0 +1,40 @@
+.main-courses header {
+
+}
+
+.course-group {
+  flex-basis: 33.33%;
+  padding-top: 18em;
+  padding-bottom: 2em;
+  text-align: center;
+  &:nth-child(1) {
+    background: linear-gradient(rgba(0, 0, 200, 0.5), rgba(0, 0, 200, 0.5)), image-url("groups/marketing-background.jpg") no-repeat left top;
+    background-size: cover;
+  }
+  &:nth-child(2) {
+    background: linear-gradient(rgba(120, 20, 0, 0.5), rgba(120, 20, 0, 0.5)), image-url("groups/development-background.jpg") no-repeat center top;
+    background-size: cover;
+
+    padding-top: 18.8em;
+  }
+  &:nth-child(3) {
+    background: linear-gradient(rgba(0, 150, 50, 0.5), rgba(0, 150, 50, 0.5)), image-url("groups/personal-background.jpg") no-repeat right top;
+    background-size: cover;
+  }
+
+  img {
+    width: 150px;
+  }
+
+  h2 {
+    color: white;
+    font-size: 1.5em;
+    margin: .5em auto 1em;
+    width: 200px;
+  }
+
+  button {
+    background-color: $purple;
+    color: white;
+  }
+}
