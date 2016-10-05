@@ -8,17 +8,17 @@
   padding-bottom: 2em;
   text-align: center;
   &:nth-child(1) {
-    background: linear-gradient(rgba(0, 0, 200, 0.5), rgba(0, 0, 200, 0.5)), image-url("groups/marketing-background.jpg") no-repeat left top;
+    background: linear-gradient(rgba(0, 62, 139, 0.5), rgba(0, 62, 139, 0.5)), image-url("groups/marketing-background.jpg") no-repeat left top;
     background-size: cover;
   }
   &:nth-child(2) {
-    background: linear-gradient(rgba(120, 20, 0, 0.5), rgba(120, 20, 0, 0.5)), image-url("groups/development-background.jpg") no-repeat center top;
+    background: linear-gradient(rgba(196, 81, 175, 0.5), rgba(196, 81, 175, 0.5)), image-url("groups/development-background.jpg") no-repeat center top;
     background-size: cover;
 
     padding-top: 18.8em;
   }
   &:nth-child(3) {
-    background: linear-gradient(rgba(0, 150, 50, 0.5), rgba(0, 150, 50, 0.5)), image-url("groups/personal-background.jpg") no-repeat right top;
+    background: linear-gradient(rgba(0, 202, 231, 0.5), rgba(0, 202, 231, 0.5)), image-url("groups/personal-background.jpg") no-repeat right top;
     background-size: cover;
   }
 
@@ -37,4 +37,57 @@
     background-color: $purple;
     color: white;
   }
+}
+
+.main-course {
+  background-image: image-url("course-background.png");
+  background-size: contain;
+  padding: 6em 0 0;
+  position: relative;
+  min-height: 526px;
+
+  img {
+    width: 60px;
+  }
+}
+
+.main-info, .video-info {
+  margin: 0 auto;
+  max-width: 880px;
+}
+
+.main-info {
+  .sales {
+    background-color: white;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 1em;
+    text-align: center;
+    width: 35%;
+
+    button {
+      background-color: $purple;
+      color: white;
+    }
+
+    p { font-size: .8em; }
+  }
+
+  h1 {
+    color: $gray;
+    width: 65%;
+  }
+
+  h1, .sales {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+.video-info {
+  background-color: white;
+  left: 50%;
+  padding: 1em;
+  position: absolute;
+  transform: translateX(-50%);
 }
