@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "/", to: "public#home"
 
   get "/certificados", to: "public#certificates"
+  get "/gana-dinero", to: "public#money"
 
   get "/cursos", to: "courses#index"
   get "/cursos/:id", to: "courses#show"
