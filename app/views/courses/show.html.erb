@@ -30,9 +30,9 @@
 
   <div class="video-info">
     <div class="video-wrapper">
-      
-    </div>
-    <div class="side-info">
+      <%= video_tag "video.mp4", :controls => true, :class => 'video-playing autoplay' %>
+    </div><!--
+    --><div class="side-info">
       <h4>Información</h4>
       <ul>
         <li>
@@ -49,86 +49,109 @@
         </li>
       </ul>
       <h4>Profesor</h4>
-      <figure>
-        <%= image_tag("logo-white.png") %>
-        <h5>Nombres y Apellidos</h5>
-        <p>Breve descripción de la trayectoria profesional del profesor, sobre todo tu desempeño actual</p>
-      </figure>
+      <%= image_tag("logo-white.png") %><h5>Nombre Completo</h5>
+      <p>Breve descripción de la trayectoria profesional del profesor, sobre todo tu desempeño actual</p>
     </div>
   </div>
 </section>
 
 <section class="info-course">
-  <h2>Sobre el curso:</h2>
+  <div class="info-course-container">
+  <h3>Sobre el curso:</h3>
 
-  <h5>Descripción del curso</h5>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <div class="info-section">
+    <h5>Descripción del curso</h5>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
 
-  <h5>¿Qué vas a lograr con este curso?</h5>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <div class="info-section">
+    <h5>¿Qué vas a lograr con este curso?</h5>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
 
-  <h5>Programa del curso</h5>
-  <h6>MÓDULO 1: Introducción</h6>
-  <ul>
-    <li>
-      <span>Introducción al curso</span>
-      <em>05min</em>
-    </li>
-    <li>
-      <span>Introducción al curso</span>
-      <em>05min</em>
-    </li>
-    <li>
-      <span>Introducción al curso</span>
-      <em>05min</em>
-    </li>
-    <li>
-      <span>Introducción al curso</span>
-      <em>05min</em>
-    </li>
-    <li>
-      <span>Introducción al curso</span>
-      <em>05min</em>
-    </li>
-    <li>
-      <span>Introducción al curso</span>
-      <em>05min</em>
-    </li>
-  </ul>
+  <div class="info-section">
+    <h5>Programa del curso</h5>
+    <h6>MÓDULO 1: Introducción</h6>
+    <ul>
+      <li>
+        <i class="fa fa-lock"></i>
+        <span>Clase 1: Introducción al curso</span>
+        <em>05min</em>
+      </li>
+      <li>
+        <i class="fa fa-lock"></i>
+        <span>Clase 1: Introducción al curso</span>
+        <em>05min</em>
+      </li>
+      <li>
+        <i class="fa fa-lock"></i>
+        <span>Clase 1: Introducción al curso</span>
+        <em>05min</em>
+      </li>
+      <li>
+        <i class="fa fa-lock"></i>
+        <span>Clase 1: Introducción al curso</span>
+        <em>05min</em>
+      </li>
+      <li>
+        <i class="fa fa-lock"></i>
+        <span>Clase 1: Introducción al curso</span>
+        <em>05min</em>
+      </li>
+      <li>
+        <i class="fa fa-lock"></i>
+        <span>Clase 1: Introducción al curso</span>
+        <em>05min</em>
+      </li>
+    </ul>
 
-  <h6>MÓDULO 2: Introducción</h6>
-  <ul>
-    <li>
-      <span>Introducción al curso</span>
-      <em>05min</em>
-    </li>
-    <li>
-      <span>Introducción al curso</span>
-      <em>05min</em>
-    </li>
-    <li>
-      <span>Introducción al curso</span>
-      <em>05min</em>
-    </li>
-    <li>
-      <span>Introducción al curso</span>
-      <em>05min</em>
-    </li>
-    <li>
-      <span>Introducción al curso</span>
-      <em>05min</em>
-    </li>
-    <li>
-      <span>Introducción al curso</span>
-      <em>05min</em>
-    </li>
-  </ul>
+    <h6>MÓDULO 2: Introducción</h6>
+    <ul>
+      <li>
+        <i class="fa fa-lock"></i>
+        <span>Clase 1: Introducción al curso</span>
+        <em>05min</em>
+      </li>
+      <li>
+        <i class="fa fa-lock"></i>
+        <span>Clase 1: Introducción al curso</span>
+        <em>05min</em>
+      </li>
+      <li>
+        <i class="fa fa-lock"></i>
+        <span>Clase 1: Introducción al curso</span>
+        <em>05min</em>
+      </li>
+      <li>
+        <i class="fa fa-lock"></i>
+        <span>Clase 1: Introducción al curso</span>
+        <em>05min</em>
+      </li>
+      <li>
+        <i class="fa fa-lock"></i>
+        <span>Clase 1: Introducción al curso</span>
+        <em>05min</em>
+      </li>
+      <li>
+        <i class="fa fa-lock"></i>
+        <span>Clase 1: Introducción al curso</span>
+        <em>05min</em>
+      </li>
+    </ul>
+  </div>
 
-  <h5>Certificado</h5>
-  <p>Obtendrás un certificado a nombre de Wit University al concluir satisfactoriamente el curso. El certificado se enviará en formato PDF, y es gratuito.</p>
+  <div class="info-section">
+    <h5>Certificado</h5>
+    <p>Obtendrás un certificado a nombre de Wit University al concluir satisfactoriamente el curso. El certificado se enviará en formato PDF, y es gratuito.</p>
+  </div>
 
-  <h2>Sobre el profesor:</h2>
-  <%= image_tag("logo-white.png") %>
-  <h5>Nombres y Apellidos</h5>
-  <p>Breve descripción de la trayectoria profesional del profesor, sobre todo tu desempeño actual</p>
+  <div class="info-section">
+    <h3>Sobre el profesor:</h3>
+    <%= image_tag("logo-white.png") %>
+    <div class="professor-info">
+      <h5>Nombres y Apellidos</h5>
+      <p>Breve descripción de la trayectoria profesional del profesor, sobre todo tu desempeño actual</p>
+    </div>
+  </div>
+  </div>
 </section>
