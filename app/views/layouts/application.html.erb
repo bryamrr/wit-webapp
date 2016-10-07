@@ -9,7 +9,28 @@
   </head>
 
   <body class="<%= content_for :body_class %>">
+    <header>
+      <div class="logo">
+        <a href="/">
+          <%= image_tag("logo-white.png", class: "logo-white") %>
+          <%= image_tag("logo-purple.png", class: "logo-purple") %>
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><%= link_to "Cursos", "/cursos" %></li>
+          <li><%= link_to "¡Gana dinero!", "/embajadores" %></li>
+          <li><%= link_to "Verificar certificado", "/certificado" %></li>
+        </ul>
+      </nav>
+      <div class="login-box">
+        <%= link_to "Campus virtual", "/campus" %>
+        <button>¡Regístrate!</button>
+      </div>
+    </header>
+
     <%= yield %>
+
     <footer>
       <div class="flex-container">
         <div class="footer-links">
