@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).on('turbolinks:load', function () {
   $("#typed").typed({
     stringsElement: $('#typed-strings'),
     startDelay: 300,

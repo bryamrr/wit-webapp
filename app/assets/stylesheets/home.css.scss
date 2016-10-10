@@ -14,12 +14,13 @@
 
 .main-home {
   color: white;
+  h2 {
+    font-size: 4em;
+    margin-bottom: .2em;
+  }
   #typed, .typed-cursor {
     @extend h2;
     font-weight: bold;
-  }
-  h2 {
-    margin-bottom: .3em;
   }
 
   .overlay {
@@ -149,7 +150,7 @@
   background-size: 80% auto;
   background-position: bottom;
   background-repeat: no-repeat;
-  padding: 5em 0 26em;
+  padding: 5em 0 27em;
   text-align: center;
   p {
     color: white;
@@ -225,6 +226,7 @@ footer {
   font-size: .9em;
   padding: .8em 3em;
   position: relative;
+  text-align: center;
 
   .logo-footer {
     position: absolute;
