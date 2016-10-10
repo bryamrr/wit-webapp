@@ -55,3 +55,59 @@ a {
   justify-content: flex-start;
   align-items: stretch;
 }
+
+/* HEADER */
+
+header {
+  background-color: transparent;
+  box-sizing: border-box;
+  height: 67px;
+  padding: .75em 3em;
+  position: absolute;
+  transition: all .5s ease;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  &.scrolled {
+    background-color: white;
+    border-bottom: 1px solid lighten($gray, 70%);
+    position: fixed;
+    .logo-white { display: none; }
+    .logo-purple { display: inline-block; }
+    a { color: $purple; }
+  }
+}
+
+.logo {
+  margin-right: 5em;
+  width: 50px;
+  img {
+    width: 100%;
+  }
+}
+
+nav {
+  ul {
+    line-height: 43px;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    margin-right: 2em;
+    a {
+      color: white;
+      transition: color .2s linear;
+      &:hover { color: $yellow; }
+    }
+  }
+}
+
+.logo, nav {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.logo-purple { display: none; }
+
+.login-box { display: none; }
