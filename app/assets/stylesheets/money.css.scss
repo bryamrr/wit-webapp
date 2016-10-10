@@ -1,14 +1,15 @@
 .main-money {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), image-url("money/money-background.jpg");
+  background-position: center center;
   background-size: cover;
   padding: 13em 0;
 
   h1 {
     color: white;
-    font-size: 2.4em;
+    font-size: 3em;
     line-height: 1.3em;
-    margin-left: 4em;
-    max-width: 370px;
+    margin-left: 3em;
+    max-width: 450px;
     text-align: center;
     strong { font-size: 1.2em; }
   }
@@ -85,7 +86,25 @@
   background-color: white;
   border: 2px solid $purple;
   margin: 0 auto;
+  position: relative;
   width: 400px;
+
+  .medalla {
+    position: absolute;
+    top: -50px;
+    right: -65px;
+    width: 150px;
+  }
+
+  .conditions {
+    font-size: .7em;
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+    &:hover { text-decoration: none; }
+  }
 }
 
 .plan-header {
@@ -110,7 +129,7 @@
 }
 
 .plan-body {
-  padding: 2em 1.5em;
+  padding: 2em 1.5em 1em;
   ul {
     padding: 0;
     margin: 0 0 2em;
