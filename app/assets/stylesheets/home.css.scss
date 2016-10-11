@@ -256,6 +256,8 @@ footer {
       margin-right: 0;
     }
   }
+
+  .motivation { padding-bottom: 17em; }
 }
 
 @media screen and (max-width: 640px) {
@@ -277,6 +279,7 @@ footer {
     margin-right: 0;
     &:nth-child(3n) { margin-right: 0; }
   }
+  .motivation { padding-bottom: 12em; }
 }
 
 
