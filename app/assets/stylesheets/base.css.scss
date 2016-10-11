@@ -86,6 +86,14 @@ header {
     .logo-white { display: none; }
     .logo-purple { display: inline-block; }
     a { color: $purple; }
+
+    .login-box  {
+      a { border-color: $purple; }
+      button {
+        border-color: $purple;
+        color: $purple;
+      }
+    }
   }
 }
 
@@ -121,4 +129,25 @@ nav {
 
 .logo-purple { display: none; }
 
-.login-box { display: none; }
+.login-box {
+  float: right;
+
+  button {
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 20px;
+    color: white;
+    padding: .3em 1em;
+  }
+
+  a {
+    border-right: 1px solid white;
+    color: white;
+    display: inline-block;
+    padding-right: .7em;
+    line-height: 28px;
+    margin-top: 7px;
+    margin-right: .5em;
+    &:hover { color: $yellow; }
+  }
+}
