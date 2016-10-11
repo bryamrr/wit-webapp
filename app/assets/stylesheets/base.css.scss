@@ -12,6 +12,7 @@ button {
   color: $purple;
   cursor: pointer;
   padding: .7em 2em;
+  outline: none;
   transition: all .5s ease;
   &:hover {
     transform: scale(1.1);

@@ -17,7 +17,7 @@
 
 .steps {
   text-align: center;
-  padding: 5em 10em;
+  padding: 5em 3em;
 
   .step {
     position: relative;
@@ -151,7 +151,7 @@
   span {
     display: inline-block;
     vertical-align: top;
-    width: 300px;
+    width: calc(100% - 37px);
   }
 }
 
@@ -205,5 +205,50 @@
   h2 {
     font-size: 3em;
     margin: 0 0 1em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-money h1 {
+    margin-left: auto;
+    margin: 0 auto;
+  }
+
+  .steps .step {
+    margin-right: 0;
+    margin-bottom: 2em;
+    flex-basis: 100%;
+  }
+
+  .compensation {
+    margin-right: 6%;
+    margin-bottom: 2em;
+    flex-basis: 47%;
+    &:nth-child(2n) { margin-right: 0; }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .compensation {
+    margin-right: 0;
+    flex-basis: 100%;
+  }
+
+  .main-money {
+    padding-left: 3em;
+    padding-right: 3em;
+    h1 {
+      font-size: 2em;
+    }
+  }
+
+  .plan {
+    width: 80%;
+
+    .medalla {
+      right: -40px;
+      top: -30px;
+      width: 100px;
+    }
   }
 }

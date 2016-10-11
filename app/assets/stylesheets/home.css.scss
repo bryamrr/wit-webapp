@@ -123,7 +123,7 @@
 
 /* WHY */
 .why {
-  padding: 3em 10em;
+  padding: 3em;
   text-align: center;
 
   h3 {
@@ -137,9 +137,7 @@
   flex-basis: 28%;
   &:nth-child(3n) { margin-right: 0; }
 
-  img {
-    height: 100px;
-  }
+  img { height: 100px; }
 }
 
 
@@ -172,7 +170,7 @@
 footer {
   background-image: image-url("footer");
   background-size: cover;
-  padding: 4em 8em;
+  padding: 4em 3em;
 }
 
 .footer-links {
@@ -237,9 +235,49 @@ footer {
 }
 
 
+@media screen and (max-width: 768px) {
+  .courses .course, .reason {
+    flex-basis: 47%;
+    margin-right: 6%;
+    &:nth-child(3n) { margin-right: 6%; }
+    &:nth-child(2n) { margin-right: 0; }
+  }
 
+  .footer-links {
+    flex-basis: 30%;
+    margin-right: 5%;
+    &:nth-child(3n) {
+      border-right: 0;
+      margin-right: 0;
+    }
+    &:nth-child(4n) {
+      flex-basis: 100%;
+      margin-top: 2em;
+      margin-right: 0;
+    }
+  }
+}
 
+@media screen and (max-width: 640px) {
+  .main-home h2 { font-size: 2.5em; }
 
+  .footer-links {
+    border-right: 0;
+    flex-basis: 100%;
+    margin-bottom: 2em;
+    margin-right: 0;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main-home h2 { font-size: 2em; }
+  .courses .course, .reason {
+    flex-basis: 100%;
+    margin-right: 0;
+    &:nth-child(3n) { margin-right: 0; }
+  }
+}
 
 
 

@@ -182,3 +182,7 @@
 .info-section {
   margin-bottom: 3em;
 }
+
+@media screen and (max-width: 640px) {
+  .course-group { flex-basis: 100%; }
+}
