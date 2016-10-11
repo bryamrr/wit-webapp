@@ -5,7 +5,7 @@ body {
   margin: 0 auto;
 }
 
-button {
+button, input[type=submit] {
   background: rgba(white, .8);
   border-radius: 12px;
   border: none;
