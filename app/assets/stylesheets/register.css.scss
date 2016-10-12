@@ -31,7 +31,35 @@
     text-align: left;
     width: 100%;
     img {
+      margin-top: 6px;
+      padding: .3em 1em;
+      max-width: 20px;
       height: 25px;
+    }
+    input {
+      background-color: transparent;
+      box-sizing: border-box;
+      vertical-align: top;
+      padding: .2em 0 0 1em;
+      border: 0;
+      border-left: 2px solid $medium-gray;
+      height: 45px;
+      width: calc(100% - 53px);
+      &:focus { outline: 0; }
+    }
+    ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+      color: $gray;
+    }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      color: $gray;
+      opacity: 1;
+    }
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+      color: $gray;
+      opacity: 1;
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: $gray;
     }
   }
 }

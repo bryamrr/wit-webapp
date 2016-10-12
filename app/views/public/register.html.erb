@@ -3,32 +3,32 @@
     <h2>¡Tu vida cambiará<br /> a partir de este momento!</h2>
     <%= form_for :user do |f| %>
       <div class="form-input">
-        <%= image_tag("inputs/name.png") %>
-        <%= f.text_field(:name, placeholder: 'Nombres y Apellidos') %>
+        <%= image_tag("inputs/name.png") %><!--
+        --><%= f.text_field(:name, placeholder: 'Nombres y Apellidos') %>
       </div>
       <div class="form-input">
-        <%= image_tag("inputs/email.png") %>
-        <%= f.email_field(:email, placeholder: 'Email') %>
+        <%= image_tag("inputs/email.png") %><!--
+        --><%= f.email_field(:email, placeholder: 'Email') %>
       </div>
       <div class="form-input">
-        <%= image_tag("inputs/user.png") %>
-        <%= f.text_field(:nickname, placeholder: 'Nombre de Usuario') %>
+        <%= image_tag("inputs/user.png") %><!--
+        --><%= f.text_field(:nickname, placeholder: 'Nombre de Usuario') %>
       </div>
       <div class="form-input">
-        <%= image_tag("inputs/password.png") %>
-        <%= f.password_field(:password, placeholder: 'Contraseña') %>
+        <%= image_tag("inputs/password.png") %><!--
+        --><%= f.password_field(:password, placeholder: 'Contraseña') %>
       </div>
       <div class="form-input">
-        <%= image_tag("inputs/dni.png") %>
-        <%= f.text_field(:dni, placeholder: 'DNI Nº') %>
+        <%= image_tag("inputs/dni.png") %><!--
+        --><%= f.text_field(:dni, placeholder: 'DNI Nº') %>
       </div>
       <div class="form-input">
-        <%= image_tag("inputs/district.png") %>
-        <%= f.text_field(:district, placeholder: 'Distrito') %>
+        <%= image_tag("inputs/district.png") %><!--
+        --><%= f.text_field(:district, placeholder: 'Distrito') %>
       </div>
       <div class="form-input">
-        <%= image_tag("inputs/referral.png") %>
-        <%= f.text_field(:referral, placeholder: 'Invitado por') %>
+        <%= image_tag("inputs/referral.png") %><!--
+        --><%= f.text_field(:referral, placeholder: 'Invitado por') %>
       </div>
       <%= f.submit '¡REGISTRARME!' %>
     <% end %>

@@ -113,7 +113,9 @@ nav {
 .login-box {
   float: right;
 
-  button {
+  form { display: inline-block; }
+
+  .button {
     background-color: transparent;
     border: 2px solid white;
     border-radius: 20px;
@@ -121,7 +123,7 @@ nav {
     padding: .3em 1em;
   }
 
-  a {
+  .link {
     border-right: 1px solid white;
     color: white;
     display: inline-block;
@@ -205,4 +207,11 @@ nav {
       }
     }
   }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
