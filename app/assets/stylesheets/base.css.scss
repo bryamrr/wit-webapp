@@ -6,16 +6,20 @@ body {
 }
 
 button, input[type=submit] {
-  background: rgba(white, .8);
-  border-radius: 12px;
+  background: $purple;
+  border-radius: 20px;
   border: none;
-  color: $purple;
+  color: white;
   cursor: pointer;
   padding: .7em 2em;
   outline: none;
   transition: all .5s ease;
   &:hover {
     transform: scale(1.1);
+  }
+  &.button-alternative {
+    background-color: transparent;
+    border: 2px solid white;
   }
 }
 
@@ -116,6 +120,7 @@ nav {
   form { display: inline-block; }
 
   .button {
+    @extend button;
     background-color: transparent;
     border: 2px solid white;
     border-radius: 20px;
