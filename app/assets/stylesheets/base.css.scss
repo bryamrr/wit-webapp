@@ -5,12 +5,13 @@ body {
   margin: 0 auto;
 }
 
-button, input[type=submit] {
+button, input[type=submit], .button {
   background: $purple;
   border-radius: 20px;
   border: none;
   color: white;
   cursor: pointer;
+  font-weight: normal;
   padding: .7em 2em;
   outline: none;
   transition: all .5s ease;
@@ -119,15 +120,6 @@ nav {
 
   form { display: inline-block; }
 
-  .button {
-    @extend button;
-    background-color: transparent;
-    border: 2px solid white;
-    border-radius: 20px;
-    color: white;
-    padding: .3em 1em;
-  }
-
   .link {
     border-right: 1px solid white;
     color: white;
@@ -137,6 +129,11 @@ nav {
     margin-top: 7px;
     margin-right: .5em;
     &:hover { color: $yellow; }
+  }
+
+  .button {
+    display: inline-block;
+    padding: .3em 1.5em;
   }
 }
 
@@ -206,10 +203,7 @@ nav {
 
     .login-box  {
       a { border-color: $purple; }
-      button {
-        border-color: $purple;
-        color: $purple;
-      }
+      .link { color: $purple; }
     }
   }
 }
