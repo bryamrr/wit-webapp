@@ -103,8 +103,9 @@ nav {
     a {
       color: white;
       transition: color .2s linear;
-      &:hover { color: $yellow; }
+      &:hover { color: $link-selected; }
     }
+    &.active a { color: $link-selected; }
   }
 }
 

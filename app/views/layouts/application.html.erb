@@ -20,9 +20,9 @@
       </div>
       <nav>
         <ul>
-          <li><%= link_to "Cursos", "/cursos" %></li>
-          <li><%= link_to "¡Gana dinero!", "/embajadores" %></li>
-          <li><%= link_to "Verificar certificado", "/certificados" %></li>
+          <li class="<%= is_active('courses', 'index') %>"><%= link_to "Cursos", "/cursos" %></li>
+          <li class="<%= is_active('public', 'money') %>"><%= link_to "¡Gana dinero!", "/embajadores" %></li>
+          <li class="<%= is_active('public', 'certificates') %>"><%= link_to "Verificar certificado", "/certificados" %></li>
         </ul>
       </nav>
       <div class="login-box">
