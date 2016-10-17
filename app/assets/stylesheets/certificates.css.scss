@@ -20,6 +20,21 @@
     background-color: $purple;
     color: white;
   }
+
+  ::-webkit-input-placeholder {
+    color: $medium-gray;
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+    color: $medium-gray;
+  }
+  ::-moz-placeholder {  /* Firefox 19+ */
+    color: $medium-gray;
+  }
+
+  :-ms-input-placeholder {
+    color: $medium-gray;
+  }
 }
 
 @media screen and (max-width: 480px) {
