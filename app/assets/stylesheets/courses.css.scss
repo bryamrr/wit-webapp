@@ -4,7 +4,7 @@
 
 .course-group {
   flex-basis: 33.33%;
-  padding-top: 18em;
+  padding-top: 24em;
   padding-bottom: 2em;
   text-align: center;
   &:nth-child(1) {
@@ -15,7 +15,7 @@
     background: linear-gradient(rgba(196, 81, 175, 0.5), rgba(196, 81, 175, 0.5)), image-url("groups/development-background.jpg") no-repeat center top;
     background-size: cover;
 
-    padding-top: 18.8em;
+    padding-top: 24.6em;
   }
   &:nth-child(3) {
     background: linear-gradient(rgba(0, 202, 231, 0.5), rgba(0, 202, 231, 0.5)), image-url("groups/personal-background.jpg") no-repeat right top;

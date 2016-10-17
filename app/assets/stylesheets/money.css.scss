@@ -2,7 +2,7 @@
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), image-url("money/money-background.jpg");
   background-position: center center;
   background-size: cover;
-  padding: 13em 0;
+  padding: 14.5em 0;
 
   h1 {
     color: white;
@@ -164,14 +164,17 @@
     margin-bottom: .5em;
   }
 
-  p { margin: 0; }
+  p {
+    font-size: .9em;
+    margin: 0;
+  }
 }
 
 .money-motivation-2 {
   background: linear-gradient(rgba(255, 208, 0, 0.6), rgba(255, 208, 0, 0.6)), image-url("money/car.jpg") center bottom;
   background-size: cover;
   color: $purple;
-  padding: 11em 0;
+  padding: 11.5em 0;
   text-align: center;
 
   p {
