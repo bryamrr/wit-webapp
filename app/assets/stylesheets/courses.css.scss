@@ -173,6 +173,44 @@
   margin-bottom: 3em;
 }
 
+.experts {
+  background-color: $light-blue;
+  color: white;
+  padding: 5em;
+  text-align: center;
+  figure {
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0;
+    height: 120px;
+    overflow: hidden;
+    width: 120px;
+  }
+  img { height: 120px; }
+  h5 {
+    font-size: 1.2em;
+    margin-bottom: .2em;
+    margin-top: .5em;
+  }
+  h3 {
+    margin-top: 0;
+    margin-bottom: 1.5em;
+  }
+  .item { padding: 1em; }
+  .tagline { font-size: .85em; }
+
+  .normal-container { position: relative; }
+  .prev, .next {
+    font-size: 3em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .prev { left: -.5em; }
+  .next { right: -.5em; }
+}
+
 @media screen and (max-width: 640px) {
   .course-group { flex-basis: 100%; }
 }
