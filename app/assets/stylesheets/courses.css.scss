@@ -196,7 +196,13 @@
     margin-top: 0;
     margin-bottom: 1.5em;
   }
-  .item { padding: 1em; }
+  .item {
+    padding: 1em;
+    transition: all .4s ease;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
   .tagline { font-size: .85em; }
 
   .normal-container { position: relative; }

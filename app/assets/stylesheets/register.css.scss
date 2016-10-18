@@ -17,7 +17,10 @@
       font-size: 1.8em;
     }
 
-    input[type=submit] { width: 100%; }
+    input[type=submit] {
+      border-radius: 5px;
+      width: 100%;
+    }
   }
 
   .form-input {
@@ -26,10 +29,15 @@
     margin-bottom: .5em;
     text-align: left;
     width: 100%;
+    figure {
+      display: inline-block;
+      margin: 0;
+      text-align: center;
+      width: 51px;
+    }
     img {
       margin-top: 6px;
-      padding: .3em 1em;
-      max-width: 20px;
+      padding: .3em 0;
       height: 25px;
     }
     input {
