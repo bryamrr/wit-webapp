@@ -19,8 +19,8 @@ button, input[type=submit], .button {
     transform: scale(1.1);
   }
   &.button-alternative {
-    background-color: transparent;
-    border: 2px solid white;
+    background-color: rgba(255, 255, 255, .85);
+    color: $purple;
   }
 }
 
@@ -133,6 +133,9 @@ nav {
   }
 
   .button {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
     display: inline-block;
     padding: .3em 1.5em;
   }

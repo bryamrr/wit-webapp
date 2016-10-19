@@ -2,19 +2,19 @@
   background: linear-gradient(rgba(49, 39, 130, 0.3), rgba(49, 39, 130, 0.3)), image-url("graduates.jpg");
   background-position: center center;
   background-size: cover;
-  padding: 6em 3em 3em;
+  padding: 5em 3em 2em;
 
   .form-container {
     background: rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
     margin: 0 auto;
-    padding: 1em 2.5em;
+    padding: .7em 2.5em;
     text-align: center;
     width: 450px;
 
     h2 {
       color: $purple;
-      font-size: 1.8em;
+      font-size: 1.7em;
     }
 
     input[type=submit] {
