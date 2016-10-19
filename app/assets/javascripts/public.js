@@ -10,21 +10,21 @@ $(document).on('turbolinks:load', function () {
 
   var owl = $("#owl-demo");
 
-    owl.owlCarousel({
-      items : 4,
-      itemsDesktop : [1000,3],
-      itemsDesktopSmall : [900,2],
-      itemsTablet: [600,1],
-      itemsMobile : false
-    });
+  owl.owlCarousel({
+    items : 4,
+    itemsDesktop : [1000,3],
+    itemsDesktopSmall : [900,2],
+    itemsTablet: [600,1],
+    itemsMobile : false
+  });
 
-    // Custom Navigation Events
-    $(".next").click(function(){
-      owl.trigger('owl.next');
-    });
-    $(".prev").click(function(){
-      owl.trigger('owl.prev');
-    });
+  // Custom Navigation Events
+  $(".next").click(function() {
+    owl.trigger('owl.next');
+  });
+  $(".prev").click(function() {
+    owl.trigger('owl.prev');
+  });
 });
 
 $(window).scroll(function() {

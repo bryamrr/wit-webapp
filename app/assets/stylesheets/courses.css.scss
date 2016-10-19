@@ -177,6 +177,7 @@
   background-color: $light-blue;
   color: white;
   padding: 5em;
+  position: relative;
   text-align: center;
   figure {
     border-radius: 50%;
@@ -186,7 +187,6 @@
     overflow: hidden;
     width: 120px;
   }
-  img { height: 120px; }
   h5 {
     font-size: 1.2em;
     margin-bottom: .2em;
@@ -199,22 +199,29 @@
   .item {
     padding: 1em;
     transition: all .4s ease;
+    img { height: 120px; }
     &:hover {
       transform: scale(1.1);
     }
   }
   .tagline { font-size: .85em; }
 
-  .normal-container { position: relative; }
   .prev, .next {
-    font-size: 3em;
+    display: block;
+    height: 50px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    img { height: 100%; }
   }
 
-  .prev { left: -.5em; }
-  .next { right: -.5em; }
+  .prev { left: 6em; }
+  .next { right: 6em; }
+}
+
+@media screen and (max-width: 1024px) {
+  .experts .prev { left: 3em; }
+  .experts .next { right: 3em; }
 }
 
 @media screen and (max-width: 640px) {
