@@ -4,7 +4,7 @@
 
 .course-group {
   flex-basis: 33.33%;
-  padding-top: 21em;
+  padding-top: 20em;
   padding-bottom: 5em;
   text-align: center;
   &:nth-child(1) {
@@ -12,15 +12,15 @@
     background-size: cover;
   }
   &:nth-child(2) {
-    background: linear-gradient(rgba(196, 81, 175, 0.5), rgba(196, 81, 175, 0.5)), image-url("groups/development-background.jpg") no-repeat center top;
+    background: linear-gradient(rgba(196, 81, 175, 0.5), rgba(196, 81, 175, 0.5)), image-url("groups/development-background.jpg") no-repeat left top;
     background-size: cover;
 
-    padding-top: 21.7em;
+    padding-top: 20.7em;
   }
   &:nth-child(3) {
     background: linear-gradient(rgba(0, 202, 231, 0.5), rgba(0, 202, 231, 0.5)), image-url("groups/personal-background.jpg") no-repeat right top;
     background-size: cover;
-    padding-top: 20.8em;
+    padding-top: 19.8em;
   }
 
   img {
