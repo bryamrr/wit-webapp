@@ -37,8 +37,11 @@
   }
 
   .video-playing {
+    object-fit: cover;
+    height: 100%;
     width: 100%;
   }
+  .responsive-background { display: none; }
 }
 
 .courses, .why {
@@ -257,6 +260,16 @@ footer {
 
 
 @media screen and (max-width: 768px) {
+  .main-home {
+    .video-wrapper { display: none; }
+    .responsive-background {
+      display: block;
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+  }
+
   .courses .course, .reason {
     flex-basis: 47%;
     margin-right: 6%;
