@@ -1,5 +1,21 @@
 <% content_for :body_class, 'courses-index' %>
 <section class="main-courses">
+
+  <div class="responsive-container">
+    <button>
+      <%= image_tag("groups/marketing.png") %>
+      <span>Marketing & Negocios</span>
+    </button>
+    <button>
+      <%= image_tag("groups/development.png") %>
+      <span>Diseño & Programación</span>
+    </button>
+    <button>
+      <%= image_tag("groups/personal.png") %>
+      <span>Idiomas & Des. Personal</span>
+    </button>
+  </div>
+
   <div class="flex-container">
     <article class="course-group">
       <%= image_tag("groups/marketing.png") %>

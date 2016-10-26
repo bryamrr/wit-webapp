@@ -121,6 +121,8 @@ nav {
 
   form { display: inline-block; }
 
+  a { font-weight: bold; }
+
   .link {
     border-right: 1px solid white;
     color: white;
@@ -206,7 +208,10 @@ nav {
     a { color: $purple; }
 
     .login-box  {
-      a { border-color: $purple; }
+      a {
+        border-color: $purple;
+        color: $purple;
+      }
       .link { color: $purple; }
     }
   }

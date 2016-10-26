@@ -1,3 +1,5 @@
+.responsive-container { display: none; }
+
 .courses-index .courses h3 {
   margin-bottom: 2em;
 }
@@ -226,5 +228,28 @@
 }
 
 @media screen and (max-width: 640px) {
-  .course-group { flex-basis: 100%; }
+  .main-courses {
+    background: linear-gradient(rgba(196, 81, 175, 0.5), rgba(196, 81, 175, 0.5)), image-url("groups/development-background.jpg") no-repeat center top;
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+    .flex-container { display: none; }
+    .responsive-container {
+      display: block;
+      position: absolute;
+      left: 50%;
+      margin-left: -150px;
+      bottom: 5em;
+      button {
+        display: block;
+        margin: 1em auto;
+        width: 300px;
+      }
+      img {
+        margin-right: .5em;
+        vertical-align: top;
+        width: 20px;
+      }
+    }
+  }
 }
