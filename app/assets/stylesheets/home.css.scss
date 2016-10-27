@@ -6,6 +6,7 @@
   left: 50%;
   top: 50%;
   width: 100%;
+  z-index: 2;
   transform: translate(-50%, -50%);
   .title {
     margin-bottom: 2.5em;
@@ -30,6 +31,7 @@
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: 1;
   }
   .video-wrapper {
     height: 100vh;
@@ -264,14 +266,15 @@ footer {
 
   .main-home {
     height: 100vh;
-    overflow: hidden;
     h2 { font-size: 2.5em; }
     .video-wrapper { display: none; }
     .responsive-background {
       display: block;
-      margin-top: 5em;
       width: 100%;
       height: 100vh;
+      position: absolute;
+      bottom: 0;
+      z-index: 0;
       object-fit: cover;
     }
   }
@@ -310,8 +313,11 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
-  .main-home h2 { font-size: 2em; }
-  .main-home .title { margin-top: 5em; }
+  .main-home {
+    h2 { font-size: 2em; }
+    .title { margin-top: 5em; }
+    .responsive-background { height: 70vh; }
+  }
   .courses .course, .reason {
     flex-basis: 100%;
     margin-right: 0;
