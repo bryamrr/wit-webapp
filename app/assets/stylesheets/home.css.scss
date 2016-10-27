@@ -265,6 +265,7 @@ footer {
   .main-home {
     height: 100vh;
     overflow: hidden;
+    h2 { font-size: 2.5em; }
     .video-wrapper { display: none; }
     .responsive-background {
       display: block;
@@ -299,8 +300,6 @@ footer {
 }
 
 @media screen and (max-width: 640px) {
-  .main-home h2 { font-size: 2.5em; }
-
   .footer-links {
     border-right: 0;
     flex-basis: 100%;
