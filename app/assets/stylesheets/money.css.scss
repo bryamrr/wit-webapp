@@ -31,7 +31,7 @@
       color: $medium-gray;
       font-size: 3em;
       position: absolute;
-      left: 50%;
+      left: 45%;
       transform: translateX(-360%);
     }
 
@@ -226,11 +226,25 @@
     flex-basis: 100%;
   }
 
+  .money-motivation {
+    padding: 3em 1em 4em;
+    p { font-size: 1.8em; }
+  }
+
+  .money-motivation-2 {
+    padding: 9.5em 0 11.5em
+  }
+
   .main-money {
     padding-left: 3em;
     padding-right: 3em;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 100vh;
+    overflow: hidden;
     h1 {
       font-size: 2em;
+      margin-top: 10em;
     }
   }
 

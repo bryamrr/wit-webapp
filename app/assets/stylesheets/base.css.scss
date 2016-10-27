@@ -168,7 +168,6 @@ nav {
     width: 70px;
   }
   nav {
-    float: right;
     ul { line-height: 30px; }
     li {
       margin-right: .8em;
@@ -181,6 +180,16 @@ nav {
 
 }
 
+@media screen and (max-width: 767px) and (min-width: 431px) {
+  nav {
+    float: none;
+    position: absolute;
+    right: 2em;
+    top: 3.8em;
+  }
+  .login-box .link { margin-top: 0; }
+}
+
 @media screen and (max-width: 430px) {
   header {
     background: rgba(white, .8);
@@ -190,16 +199,22 @@ nav {
   nav {
     background-color: black;
     box-sizing: border-box;
-    padding: .5em 3em;
+    padding: .5em 1.5em;
     text-align: center;
     ul {
       display: flex;
       justify-content: space-between;
     }
     li {
+      border-right: 1px solid white;
+      flex-grow: 1;
       margin-right: 0;
+      &:last-child { border-right: none; }
     }
-    a { font-weight: normal; }
+    a {
+      display: block;
+      font-weight: normal;
+    }
   }
   .logo, nav {
     float: none;
@@ -208,16 +223,17 @@ nav {
   }
 
   .logo {
-    margin: 1em 3em;
+    margin: 1em 1.5em;
     text-align: left;
   }
   .logo-white { display: none; }
   .logo-purple { display: inline-block; }
 
   .login-box {
+    font-size: .95em;
     position: absolute;
     top: 1.2em;
-    right: 1em;
+    right: 1.5em;
 
     .button {
       border: 2px solid $purple;

@@ -5,7 +5,7 @@
   padding: 5em 3em 2em;
 
   .form-container {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.5);
     box-sizing: border-box;
     margin: 0 auto;
     padding: .7em 2.5em;
@@ -69,5 +69,18 @@
 
   .conditions {
     font-size: .8em;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .main-register {
+    padding: 7em 1em 2em;
+    .form-container { width: 100%; }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .main-register {
+    padding: 8.5em 0 0;
   }
 }

@@ -260,10 +260,15 @@ footer {
 
 
 @media screen and (max-width: 768px) {
+  .motivation { padding-bottom: 18em; }
+
   .main-home {
+    height: 100vh;
+    overflow: hidden;
     .video-wrapper { display: none; }
     .responsive-background {
       display: block;
+      margin-top: 5em;
       width: 100%;
       height: 100vh;
       object-fit: cover;
@@ -291,7 +296,6 @@ footer {
     }
   }
 
-  .motivation { padding-bottom: 17em; }
 }
 
 @media screen and (max-width: 640px) {
@@ -308,12 +312,20 @@ footer {
 
 @media screen and (max-width: 480px) {
   .main-home h2 { font-size: 2em; }
+  .main-home .title { margin-top: 5em; }
   .courses .course, .reason {
     flex-basis: 100%;
     margin-right: 0;
     &:nth-child(3n) { margin-right: 0; }
   }
   .motivation { padding-bottom: 12em; }
+}
+
+@media screen and (max-width: 375px) {
+  .motivation {
+    background-size: 100% auto;
+    padding-bottom: 12em;
+  }
 }
 
 
