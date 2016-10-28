@@ -200,12 +200,14 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .main-money h1 {
     margin-left: auto;
     margin: 0 auto;
   }
+}
 
+@media screen and (max-width: 800px) {
   .steps .step {
     margin-right: 0;
     margin-bottom: 2em;

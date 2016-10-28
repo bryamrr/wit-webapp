@@ -260,8 +260,12 @@ footer {
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .motivation { padding-bottom: 22em; }
+}
 
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 800px) {
   .motivation { padding-bottom: 18em; }
 
   .main-home {
