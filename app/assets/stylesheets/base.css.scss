@@ -80,7 +80,7 @@ header {
   transition: all .5s ease;
   top: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
 }
 
 .logo {
@@ -131,7 +131,8 @@ nav {
     line-height: 32px;
     margin-top: 10px;
     margin-right: .5em;
-    &:hover { color: $yellow; }
+    transition: color .2s linear;
+    &:hover { color: $link-selected; }
   }
 
   .button {
@@ -267,7 +268,10 @@ nav {
         border-color: $purple;
         color: $purple;
       }
-      .link { color: $purple; }
+      .link {
+        color: $purple;
+        &:hover { color: $link-selected; }
+      }
     }
   }
 }
