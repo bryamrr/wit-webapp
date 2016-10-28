@@ -191,82 +191,13 @@
   }
 }
 
-
-/* FOOTER */
-footer {
-  background-image: image-url("footer");
-  background-size: cover;
-  padding: 4em 3em;
-}
-
-.footer-links {
-  border-right: 1px solid white;
-  box-sizing: border-box;
-  color: white;
-  margin-right: 5.33%;
-  flex-basis: 21%;
-  &:nth-child(4n) {
-    border-right: none;
-    margin-right: 0;
-  }
-  &.center { text-align: center; }
-
-  ul {
-    padding: 0;
-    margin: 0;
-  }
-
-  li {
-    list-style-type: none;
-    margin-bottom: .3em;
-  }
-
-  a {
-    color: white;
-    font-weight: normal;
-    text-decoration: none;
-    &:hover { text-decoration: underline; }
-  }
-  .facebook .fa-circle { color: $fb-color; }
-  .twitter .fa-circle { color: $tw-color; }
-  .youtube .fa-circle { color: $yt-color; }
-
-  .social-links {
-    a {
-      display: inline-block;
-      margin: 0 .5em;
-      transform: scale(1.2);
-      transition: all .3s ease;
-      &:hover {
-        text-decoration: none;
-        transform: scale(1.4);
-      }
-    }
-  }
-}
-
-.copyright {
-  color: lighten($gray, 20%);
-  font-size: .9em;
-  padding: .8em 3em;
-  position: relative;
-  text-align: center;
-
-  .logo-footer {
-    position: absolute;
-    bottom: .8em;
-    right: 3em;
-    width: 60px;
-  }
-}
-
 @media screen and (max-width: 1024px) {
   .motivation { padding-bottom: 22em; }
 }
 
 
 @media screen and (max-width: 800px) {
-  .motivation { padding-bottom: 18em; }
+  .motivation { background-size: 100% auto; }
 
   .main-home {
     height: 100vh;
@@ -290,30 +221,6 @@ footer {
     &:nth-child(2n) { margin-right: 0; }
   }
 
-  .footer-links {
-    flex-basis: 30%;
-    margin-right: 5%;
-    &:nth-child(3n) {
-      border-right: 0;
-      margin-right: 0;
-    }
-    &:nth-child(4n) {
-      flex-basis: 100%;
-      margin-top: 2em;
-      margin-right: 0;
-    }
-  }
-
-}
-
-@media screen and (max-width: 640px) {
-  .footer-links {
-    border-right: 0;
-    flex-basis: 100%;
-    margin-bottom: 2em;
-    margin-right: 0;
-    text-align: center;
-  }
 }
 
 @media screen and (max-width: 480px) {
@@ -328,13 +235,6 @@ footer {
     &:nth-child(3n) { margin-right: 0; }
   }
   .motivation { padding-bottom: 12em; }
-}
-
-@media screen and (max-width: 375px) {
-  .motivation {
-    background-size: 100% auto;
-    padding-bottom: 12em;
-  }
 }
 
 

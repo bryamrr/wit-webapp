@@ -144,6 +144,75 @@ nav {
   }
 }
 
+
+/* FOOTER */
+footer {
+  background-image: image-url("footer");
+  background-size: cover;
+  padding: 4em 3em;
+}
+
+.footer-links {
+  border-right: 1px solid white;
+  box-sizing: border-box;
+  color: white;
+  margin-right: 5.33%;
+  flex-basis: 21%;
+  &:nth-child(4n) {
+    border-right: none;
+    margin-right: 0;
+  }
+  &.center { text-align: center; }
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    list-style-type: none;
+    margin-bottom: .3em;
+  }
+
+  a {
+    color: white;
+    font-weight: normal;
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+  .facebook .fa-circle { color: $fb-color; }
+  .twitter .fa-circle { color: $tw-color; }
+  .youtube .fa-circle { color: $yt-color; }
+
+  .social-links {
+    a {
+      display: inline-block;
+      margin: 0 .5em;
+      transform: scale(1.2);
+      transition: all .3s ease;
+      &:hover {
+        text-decoration: none;
+        transform: scale(1.4);
+      }
+    }
+  }
+}
+
+.copyright {
+  color: lighten($gray, 20%);
+  font-size: .9em;
+  padding: .8em 3em;
+  position: relative;
+  text-align: center;
+
+  .logo-footer {
+    position: absolute;
+    bottom: .8em;
+    right: 3em;
+    width: 60px;
+  }
+}
+
 @media screen and (max-width: 910px) {
   header {
     font-size: .9em;
@@ -179,6 +248,40 @@ nav {
     clear: right;
   }
 
+  .footer-links {
+    flex-basis: 30%;
+    margin-right: 5%;
+    &:nth-child(3n) {
+      border-right: 0;
+      margin-right: 0;
+    }
+    &:nth-child(4n) {
+      flex-basis: 100%;
+      margin-top: 2em;
+      margin-right: 0;
+    }
+  }
+
+}
+
+@media screen and (max-width: 640px) {
+  .footer-links {
+    flex-basis: 45%;
+    margin-right: 10%;
+    &:nth-child(2n) {
+      border-right: 0;
+      margin-right: 0;
+    }
+    &:nth-child(3n) {
+      border-right: 1px solid white;
+      margin-right: 10%;
+      margin-top: 2em;
+    }
+    &:nth-child(4n) {
+      flex-basis: 45%;
+      text-align: left;
+    }
+  }
 }
 
 @media screen and (max-width: 767px) and (min-width: 431px) {
@@ -248,6 +351,23 @@ nav {
     }
 
     a { font-weight: normal; }
+  }
+
+  .footer-links {
+    border-right: 0;
+    flex-basis: 100%;
+    margin-bottom: 2em;
+    margin-right: 0;
+    text-align: center;
+    &:nth-child(3n) {
+      border-right: 0;
+      margin-right: 0;
+      margin-top: 0;
+    }
+    &:nth-child(4n) {
+      flex-basis: 100%;
+      text-align: center;
+    }
   }
 }
 
