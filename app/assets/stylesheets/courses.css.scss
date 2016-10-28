@@ -255,6 +255,13 @@
   }
 }
 
+@media screen and (max-width: 430px) {
+  .main-courses {
+    margin-top: 129px;
+    height: 82vh;
+  }
+}
+
 @media screen and (max-width: 400px) {
   .main-courses .responsive-container {
     width: 90%;

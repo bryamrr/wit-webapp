@@ -227,7 +227,6 @@
   .main-home {
     h2 { font-size: 2em; }
     .title { margin-top: 5em; }
-    .responsive-background { height: 70vh; }
   }
   .courses .course, .reason {
     flex-basis: 100%;
@@ -235,6 +234,10 @@
     &:nth-child(3n) { margin-right: 0; }
   }
   .motivation { padding-bottom: 12em; }
+}
+
+@media screen and (max-width: 430px) {
+  .main-home .responsive-background { height: calc(100% - 129px); }
 }
 
 

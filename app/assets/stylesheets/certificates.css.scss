@@ -52,6 +52,21 @@
 
     h1 { font-size: 3em; }
   }
+
+  ::-webkit-input-placeholder {
+    font-size: .85em;
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+    font-size: .85em;
+  }
+  ::-moz-placeholder {  /* Firefox 19+ */
+    font-size: .85em;
+  }
+
+  :-ms-input-placeholder {
+    font-size: .85em;
+  }
 }
 
 @media screen and (max-height: 375px) {
