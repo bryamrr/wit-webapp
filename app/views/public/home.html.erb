@@ -4,6 +4,7 @@
   <div class="video-wrapper">
     <%= video_tag "video.mp4", :autoplay => true, :loop => true, :class => 'video-playing autoplay' %>
   </div>
+  <%= image_tag("home-background.jpg", class: "responsive-background") %>
   <div class="main-title">
     <div class="title">
       <h2>Cursos Online para...</h2>
@@ -17,117 +18,173 @@
       </div>
       <span id="typed"></span>
     </div>
-    <button>¡Comienza hoy!</button>
+    <button class="button-alternative">¡Comienza hoy!</button>
   </div>
 </section>
 
 <section class="courses">
-  <h3>¡Estos cursos son especialmente para ti!</h3>
-  <p class="tagline">Puedes adquirirlos con cualquier tarjeta de crédito o débito y depósitos (agente BCP)</p>
+  <div class="normal-container">
+    <h3>¡Estos cursos son especialmente para ti!</h3>
+    <p class="tagline">Puedes adquirirlos con cualquier Tarjeta de Crédito o Débito y Depósitos</p>
 
-  <div class="flex-container">
-    <article class="course">
-      <div class="course-image">
-        <%= image_tag("angular2.png") %>
-      </div>
-      <div class="course-title">
-        <h4>Título del curso</h4>
-      </div>
-      <div class="course-details">
-        <div class="course-time">
-          <i class="fa fa-clock-o" aria-hidden="true"></i>
-          <span>2h 43min</span>
+    <div class="flex-container">
+      <article class="course">
+        <div class="professor-hover">
+          <div class="professor-hover-content">
+            <figure>
+              <%= image_tag("professor.jpg") %>
+            </figure>
+            <h5>Nombre del profesor</h5>
+            <p class="tagline">Profesor de la UPC</p>
+          </div>
         </div>
-        <div class="course-price">
-          S/. 50
+        <div class="course-image">
+          <%= image_tag("angular2.png") %>
         </div>
-      </div>
-    </article>
-    <article class="course">
-      <div class="course-image">
-        <%= image_tag("angular2.png") %>
-      </div>
-      <div class="course-title">
-        <h4>Título del curso</h4>
-      </div>
-      <div class="course-details">
-        <div class="course-time">
-          <i class="fa fa-clock-o" aria-hidden="true"></i>
-          <span>2h 43min</span>
+        <div class="course-title">
+          <h4>Título del curso</h4>
         </div>
-        <div class="course-price">
-          S/. 50
+        <div class="course-details">
+          <div class="course-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span>2h 43min</span>
+          </div>
+          <div class="course-price">
+            S/. 50
+          </div>
         </div>
-      </div>
-    </article>
-    <article class="course">
-      <div class="course-image">
-        <%= image_tag("angular2.png") %>
-      </div>
-      <div class="course-title">
-        <h4>Título del curso</h4>
-      </div>
-      <div class="course-details">
-        <div class="course-time">
-          <i class="fa fa-clock-o" aria-hidden="true"></i>
-          <span>2h 43min</span>
+      </article>
+      <article class="course">
+        <div class="professor-hover">
+          <div class="professor-hover-content">
+            <figure>
+              <%= image_tag("professor.jpg") %>
+            </figure>
+            <h5>Nombre del profesor</h5>
+            <p class="tagline">Profesor de la UPC</p>
+          </div>
         </div>
-        <div class="course-price">
-          S/. 50
+        <div class="course-image">
+          <%= image_tag("angular2.png") %>
         </div>
-      </div>
-    </article>
-    <article class="course">
-      <div class="course-image">
-        <%= image_tag("angular2.png") %>
-      </div>
-      <div class="course-title">
-        <h4>Título del curso</h4>
-      </div>
-      <div class="course-details">
-        <div class="course-time">
-          <i class="fa fa-clock-o" aria-hidden="true"></i>
-          <span>2h 43min</span>
+        <div class="course-title">
+          <h4>Título del curso</h4>
         </div>
-        <div class="course-price">
-          S/. 50
+        <div class="course-details">
+          <div class="course-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span>2h 43min</span>
+          </div>
+          <div class="course-price">
+            S/. 50
+          </div>
         </div>
-      </div>
-    </article>
-    <article class="course">
-      <div class="course-image">
-        <%= image_tag("angular2.png") %>
-      </div>
-      <div class="course-title">
-        <h4>Título del curso</h4>
-      </div>
-      <div class="course-details">
-        <div class="course-time">
-          <i class="fa fa-clock-o" aria-hidden="true"></i>
-          <span>2h 43min</span>
+      </article>
+      <article class="course">
+        <div class="professor-hover">
+          <div class="professor-hover-content">
+            <figure>
+              <%= image_tag("professor.jpg") %>
+            </figure>
+            <h5>Nombre del profesor</h5>
+            <p class="tagline">Profesor de la UPC</p>
+          </div>
         </div>
-        <div class="course-price">
-          S/. 50
+        <div class="course-image">
+          <%= image_tag("angular2.png") %>
         </div>
-      </div>
-    </article>
-    <article class="course">
-      <div class="course-image">
-        <%= image_tag("angular2.png") %>
-      </div>
-      <div class="course-title">
-        <h4>Título del curso</h4>
-      </div>
-      <div class="course-details">
-        <div class="course-time">
-          <i class="fa fa-clock-o" aria-hidden="true"></i>
-          <span>2h 43min</span>
+        <div class="course-title">
+          <h4>Título del curso</h4>
         </div>
-        <div class="course-price">
-          S/. 50
+        <div class="course-details">
+          <div class="course-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span>2h 43min</span>
+          </div>
+          <div class="course-price">
+            S/. 50
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
+      <article class="course">
+        <div class="professor-hover">
+          <div class="professor-hover-content">
+            <figure>
+              <%= image_tag("professor.jpg") %>
+            </figure>
+            <h5>Nombre del profesor</h5>
+            <p class="tagline">Profesor de la UPC</p>
+          </div>
+        </div>
+        <div class="course-image">
+          <%= image_tag("angular2.png") %>
+        </div>
+        <div class="course-title">
+          <h4>Título del curso</h4>
+        </div>
+        <div class="course-details">
+          <div class="course-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span>2h 43min</span>
+          </div>
+          <div class="course-price">
+            S/. 50
+          </div>
+        </div>
+      </article>
+      <article class="course">
+        <div class="professor-hover">
+          <div class="professor-hover-content">
+            <figure>
+              <%= image_tag("professor.jpg") %>
+            </figure>
+            <h5>Nombre del profesor</h5>
+            <p class="tagline">Profesor de la UPC</p>
+          </div>
+        </div>
+        <div class="course-image">
+          <%= image_tag("angular2.png") %>
+        </div>
+        <div class="course-title">
+          <h4>Título del curso</h4>
+        </div>
+        <div class="course-details">
+          <div class="course-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span>2h 43min</span>
+          </div>
+          <div class="course-price">
+            S/. 50
+          </div>
+        </div>
+      </article>
+      <article class="course">
+        <div class="professor-hover">
+          <div class="professor-hover-content">
+            <figure>
+              <%= image_tag("professor.jpg") %>
+            </figure>
+            <h5>Nombre del profesor</h5>
+            <p class="tagline">Profesor de la UPC</p>
+          </div>
+        </div>
+        <div class="course-image">
+          <%= image_tag("angular2.png") %>
+        </div>
+        <div class="course-title">
+          <h4>Título del curso</h4>
+        </div>
+        <div class="course-details">
+          <div class="course-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span>2h 43min</span>
+          </div>
+          <div class="course-price">
+            S/. 50
+          </div>
+        </div>
+      </article>
+    </div>
   </div>
 
   <button>Más cursos...</button>
@@ -135,13 +192,13 @@
 
 <section class="mission">
   <!-- Overlay -->
-  <p>"Somos una plataforma online, cuyo propósito es brindarte los mejores conocimientos del mundo"</p>
+  <p>"Somos una plataforma educativa online, cuyo propósito es brindarte <br/>los mejores conocimientos del mundo"</p>
 </section>
 
 <section class="why">
   <h3>¿Por qué estudiar en Wit University?</h3>
 
-  <div class="flex-container">
+  <div class="normal-container flex-container">
     <article class="reason">
       <%= image_tag("reasons/experto.png") %>
       <h4>Expertos</h4>
@@ -150,12 +207,12 @@
     <article class="reason">
       <%= image_tag("reasons/libertad.png") %>
       <h4>Libertad</h4>
-      <p>Aprende a tu propio ritmo, desde cualquier lugar y dispositivo</p>
+      <p>Aprende a tu propio ritmo, <br/>desde cualquier lugar y dispositivo</p>
     </article>
     <article class="reason">
       <%= image_tag("reasons/plataforma.png") %>
       <h4>Plataforma</h4>
-      <p>Clases 100% online, con acceso las 24 horas del día</p>
+      <p>Clases 100% online, <br />con acceso las 24 horas del día</p>
     </article>
     <article class="reason">
       <%= image_tag("reasons/ahorro.png") %>
@@ -165,12 +222,12 @@
     <article class="reason">
       <%= image_tag("reasons/certificado.png") %>
       <h4>Certificado</h4>
-      <p>Por cada curso concluido obtendrás un certificado</p>
+      <p>Por cada curso concluido <br />obtendrás un certificado</p>
     </article>
     <article class="reason">
       <%= image_tag("reasons/ganar.png") %>
       <h4>Gana</h4>
-      <p>Ganarás una beca y dinero por invitar a tus amigos</p>
+      <p>Ganarás una beca y dinero <br />invitando a tus amigos</p>
     </article>
   </div>
 </section>

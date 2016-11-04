@@ -7,4 +7,7 @@ class PublicController < ApplicationController
 
   def certificates
   end
+
+  def register
+  end
 end

@@ -12,6 +12,7 @@
  *
  *= require normalize-rails
  *= require font-awesome
+ *= require owl.carousel
  *= require_self
  */
 
@@ -21,5 +22,6 @@
  @import 'courses';
  @import 'money';
  @import 'certificates';
+ @import 'register';
 
  @import 'vendor/typed'
