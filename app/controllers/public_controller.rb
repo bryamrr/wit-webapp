@@ -10,4 +10,7 @@ class PublicController < ApplicationController
 
   def register
   end
+
+  def welcome
+  end
 end

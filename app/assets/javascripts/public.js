@@ -25,6 +25,12 @@ $(document).on('turbolinks:load', function () {
   $(".prev").click(function() {
     owl.trigger('owl.prev');
   });
+
+  $(function() {
+    $('select').selectize({
+      placeholder: "Escoge una provincia..."
+    });
+  });
 });
 
 $(window).scroll(function() {

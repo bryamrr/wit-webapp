@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require selectize
 //= require owl.carousel
 //= require turbolinks
 //= require typed

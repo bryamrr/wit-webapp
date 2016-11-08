@@ -16,6 +16,8 @@ gem 'coffee-rails', '~> 4.2'
 
 #Normalize styles
 gem 'normalize-rails'
+
+gem 'selectize-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
