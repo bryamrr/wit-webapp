@@ -15,4 +15,12 @@ class User < ApplicationRecord
   validates :password, presence: true
   validates :dni, presence: true, uniqueness: true
   validates_format_of :password, :with => /\A(?=.{6,14})(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!*]).*\z/
+
+  before_create :encrypt_password
+
+  private
+  def encrypt_password
+    self.salt = BCrypt::Engine.generate_salt
+    self.encrypted_password= BCrypt::Engine.hash_secret(password, salt)
+  end
 end

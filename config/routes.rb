@@ -10,4 +10,6 @@ Rails.application.routes.draw do
 
   get "/cursos", to: "courses#index"
   get "/cursos/:id", to: "courses#show"
+
+  post "/registro", to: "users#create"
 end
