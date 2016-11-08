@@ -25,6 +25,8 @@ gem "font-awesome-rails"
 
 gem 'owlcarousel-rails'
 
+gem 'valid_email'
+
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -36,13 +38,16 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'rspec-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 
   gem 'sqlite3'
+  gem 'shoulda-matchers'
+  gem 'rspec-rails'
+  gem 'factory_girl'
+  gem 'capybara'
 end
 
 group :development do
