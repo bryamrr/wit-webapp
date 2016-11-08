@@ -11,10 +11,11 @@ class UsersController < ApplicationController
         email: user_params["email"],
         password: user_params["password"],
         dni: user_params["dni"],
-        sponsor_id: user_params["sponsor_id"]
+        sponsor: user_params["sponsor"]
       )
 
     if @user.save
+      MailchimpWrapper.subscribe(@user)
       redirect_to "/bienvenido"
     else
       puts "Falló"
@@ -22,6 +23,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:nickname, :fullname, :email, :password, :role, :province, :dni, :sponsor_id)
+    params.require(:user).permit(:nickname, :fullname, :email, :password, :role, :province, :dni, :sponsor)
   end
 end

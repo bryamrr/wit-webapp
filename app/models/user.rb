@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :movements
 
   validates :nickname, presence: true, uniqueness: true
+  validates_length_of :nickname, :in => 2..15
   validates :email, presence: true, email: true
   validates :role, presence: true
   validates :province, presence: true

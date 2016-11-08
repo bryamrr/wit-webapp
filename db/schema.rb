@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161107224019) do
+ActiveRecord::Schema.define(version: 20161108224126) do
 
   create_table "alternatives", force: :cascade do |t|
     t.integer  "question_id"
@@ -237,6 +237,7 @@ ActiveRecord::Schema.define(version: 20161107224019) do
     t.boolean  "paydate_expire"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.string   "sponsor"
     t.index ["province_id"], name: "index_users_on_province_id"
     t.index ["role_id"], name: "index_users_on_role_id"
   end

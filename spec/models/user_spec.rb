@@ -13,6 +13,8 @@ RSpec.describe User, type: :model do
   it { should_not allow_value("12345").for(:password) }
   it { should allow_value("A3eilm2s2u!").for(:password) }
   it { should_not allow_value("123456789012345").for(:password) }
+  it { should allow_value("bryamrr").for(:nickname) }
+  it { should_not allow_value("bryamrr123456789").for(:nickname) }
 
   # it "should give access to user if nickname and password are correct" do
   #   user = FactoryGirl.create(:user)
