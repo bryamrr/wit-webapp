@@ -9,6 +9,7 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
       abstract: true,
       data: {
         'needAuth': true,
+        'title': 'Bienvenido'
       },
       views: {
         dashboard: {

@@ -21,6 +21,7 @@
 //= require vendors/angular-material
 //= require angular-rails-templates
 //= require_tree ./vendors
+//= require ./shared/module
 //= require_tree ./shared
 //= require campus/module
 //= require campus/config

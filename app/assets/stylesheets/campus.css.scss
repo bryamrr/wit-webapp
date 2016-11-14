@@ -17,5 +17,7 @@
  *= require_self
  */
 
+ @import 'shared/variables';
+ @import 'shared/breadcrumb';
  @import 'campus/base';
  @import 'campus/dashboard';
