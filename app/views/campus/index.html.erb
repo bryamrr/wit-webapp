@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" ng-app="campus-app">
 <head>
   <meta charset="UTF-8">
-  <title>Test</title>
+  <title ng-bind="'Wit U &mdash; ' + title">Wit U</title>
+  <base href="/">
+  <%= stylesheet_link_tag    'campus', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'campus', 'data-turbolinks-track': 'reload' %>
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
-  HOLA
+  <h1>Test angular {{ 4 + 1 }}</h1>
 </body>
 </html>
