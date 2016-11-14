@@ -3,8 +3,11 @@ Rails.application.routes.draw do
 
   get "/", to: "public#home"
 
+  get 'campus/*path' => 'campus#index'
+
   get "/certificados", to: "public#certificates"
   get "/embajadores", to: "public#money"
+  get "/login", to: "public#login"
   get "/registro", to: "public#register"
   get "/bienvenido", to: "public#welcome"
 

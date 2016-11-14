@@ -13,4 +13,7 @@ class PublicController < ApplicationController
 
   def welcome
   end
+
+  def login
+  end
 end

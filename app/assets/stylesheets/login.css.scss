@@ -1,0 +1,56 @@
+.main-login {
+  background: linear-gradient(rgba(49, 39, 130, 0.3), rgba(49, 39, 130, 0.3)), image-url("login-background.jpg");
+  background-position: center center;
+  background-size: cover;
+  padding: 11em 1em;
+
+  .outer-container {
+    background-color: white;
+    margin: 0 auto;
+    max-width: 300px;
+    padding: 1em;
+  }
+
+  .form-container {
+    border: 3px solid $purple;
+    text-align: center;
+    padding-bottom: 1.5em;
+  }
+
+  input {
+    border: 2px solid $purple;
+    box-sizing: border-box;
+    padding: .5em;
+    margin-bottom: 1em;
+    width: 85%;
+  }
+
+  input[type=submit] {
+    margin-bottom: 0;
+  }
+
+  h3 {
+    font-size: 1.8em;
+    margin-bottom: .8em;
+  }
+
+  .forgot-password {
+    color: $purple;
+    display: block;
+    font-size: .7em;
+    margin: 0 .8em 1.5em auto;
+    width: 50%;
+    &:hover { text-decoration: underline; }
+  }
+
+  .new-user {
+    font-size: .7em;
+    a {
+      color: black;
+      font-weight: normal;
+      text-decoration: underline;
+      &:hover { text-decoration: none; }
+    }
+  }
+}
+
