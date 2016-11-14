@@ -24,4 +24,18 @@ class User < ApplicationRecord
     self.salt = BCrypt::Engine.generate_salt
     self.encrypted_password= BCrypt::Engine.hash_secret(password, salt)
   end
+
+  def self.authenticate(data)
+    user = User.find_by(nickname: data[:nickname])
+    if (user)
+      encrypted_password = BCrypt::Engine.hash_secret(data[:password], user[:salt])
+      if user[:encrypted_password] == encrypted_password
+        return user
+      else
+        return false
+      end
+    else
+      return false
+    end
+  end
 end
