@@ -1000,10 +1000,7 @@ md-content.padding-15 {padding: 15px;}
   color: white;
   font-weight: bold;
   padding: 14px 15px 14px 25px;
-  > li > a {
-    
-    color: $yellow;
-  }
+  > li > a { color: $yellow; }
 }
 .nav > li > a .inner {
   position: relative;
