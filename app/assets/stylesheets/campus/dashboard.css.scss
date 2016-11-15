@@ -997,14 +997,18 @@ md-content.padding-15 {padding: 15px;}
 .nav > li > a {
   display: block;
   position: relative;
-  color: #a7b1c2;
+  color: white;
   font-weight: bold;
   padding: 14px 15px 14px 25px;
+  > li > a {
+    
+    color: $yellow;
+  }
 }
 .nav > li > a .inner {
   position: relative;
   display: block;
-  padding: 0 15px 0 25px;
+  padding: 0 15px 0 0;
 }
 .nav > li > a .inner ng-md-icon {
   margin-right: 6px;
@@ -1017,9 +1021,7 @@ md-content.padding-15 {padding: 15px;}
   margin-top: 3px;
 }
 .nav > li > a .inner .icono {
-  position: absolute;
-  left: 0;
-  top: 0;
+  display: inline-block;
 }
 .nav > li > a .inner .label {
   position: absolute;
@@ -1029,6 +1031,9 @@ md-content.padding-15 {padding: 15px;}
   font-weight: 600;
   padding: 1px 8px 2px;
   border-radius: 2px;
+}
+.nav.nav-second-level a:hover, .nav.nav-second-level a.active {
+  color: $yellow;
 }
 .nav > li > a .inner .arrow {
   position: absolute;
@@ -1042,8 +1047,9 @@ md-content.padding-15 {padding: 15px;}
   transition: all .35s ease;
 }
 .nav > li > a:hover, .nav > li > a.active {
-  background-color: #293846;
+  background-color: lighten($purple, 6);
   color: #fff;
+  cursor: pointer;
 }
 .nav > li > a:hover .inner ng-md-icon, .nav > li > a.active .inner ng-md-icon {
   fill: #fff;
@@ -2517,7 +2523,7 @@ table.md-table .eliminando td.md-cell {
 }
 
 .navbar {
-  background-color: #2f4050;
+  background-color: $purple;
 }
 
 .nav > li.special-link a {
@@ -2531,10 +2537,10 @@ table.md-table .eliminando td.md-cell {
 }
 .nav > li.active, .nav > li.open {
   border-left: 4px solid #f7a80d;
-  background-color: #293846;
+  background-color: lighten($purple, 6);
 }
 .nav > li.active > a, .nav > li.open > a {
-  background-color: #293846;
+  background-color: lighten($purple, 6);
   color: #fff;
 }
 .nav > li.active > a .inner ng-md-icon, .nav > li.open > a .inner ng-md-icon {
