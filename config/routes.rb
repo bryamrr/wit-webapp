@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "/", to: "public#home"
 
   get 'campus/*path' => 'campus#index'
+  get 'admin/*path' => 'admin#index'
 
   get "/certificados", to: "public#certificates"
   get "/embajadores", to: "public#money"

@@ -23,18 +23,25 @@ class UsersController < ApplicationController
   end
 
   def login
-    data = {nickname: params[:user][:nickname], password: params[:user][:password]}
-    user = User.authenticate(data)
+    # data = {
+    #   nickname: params[:user][:nickname],
+    #   password: params[:user][:password]
+    # }
+    # user = User.authenticate(data)
 
-    if user
-      token = user.tokens.create
-      # render :json => { :token => token.token, :nick_name => user.nick_name, :role => user.role[:name] }
-      puts "Login exitoso!!"
-      redirect_to "/campus/inicio"
-    else
-      render :json => { :errors => "Credenciales incorrectas" }, status: :unauthorized
-      puts "Falló"
-    end
+    # if user
+    #   token = user.tokens.create
+
+    #   puts user.role[:name]
+
+    #   if user.role[:name] == "Admin"
+    #     redirect_to("/admin/inicio", :user => user)
+    #   else
+    #     redirect_to "/campus/inicio"
+    #   end
+    # else
+    #   puts "Falló"
+    # end
   end
 
   def user_params

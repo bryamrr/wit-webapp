@@ -4,7 +4,7 @@ routes.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 function routes($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $stateProvider
-    .state('welcome',{
+    .state('welcome', {
       url: '/campus',
       abstract: true,
       data: {
@@ -17,7 +17,7 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-    .state('welcome.home',{
+    .state('welcome.home', {
       url: '/inicio',
       data: {
         title: 'Inicio'
@@ -31,7 +31,7 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
     })
 
     // Catalog
-    .state('catalog',{
+    .state('catalog', {
       url: '/campus/catalogo',
       abstract: true,
       data: {
@@ -44,7 +44,7 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-    .state('catalog.marketing',{
+    .state('catalog.marketing', {
       url: '/marketing-negocios',
       data: {
         title: 'Marketing & Negocios'
@@ -56,7 +56,7 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-    .state('catalog.development',{
+    .state('catalog.development', {
       url: '/diseno-desarrollo',
       data: {
         title: 'Diseño & Programación'
@@ -68,7 +68,7 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-    .state('catalog.personal',{
+    .state('catalog.personal', {
       url: '/idiomas-des-personal',
       data: {
         title: 'Idiomas & Des. Personal'
@@ -82,7 +82,7 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
     })
 
     // Courses
-    .state('courses',{
+    .state('courses', {
       url: '/campus/cursos',
       abstract: true,
       data: {
@@ -95,7 +95,7 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-    .state('courses.list',{
+    .state('courses.list', {
       url: '/lista',
       data: {
         title: 'Lista de Cursos'
@@ -107,7 +107,7 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-    .state('courses.grades',{
+    .state('courses.grades', {
       url: '/notas',
       data: {
         title: 'Notas'
@@ -121,7 +121,7 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
     })
 
     // User
-    .state('user',{
+    .state('user', {
       url: '/campus/datos',
       abstract: true,
       data: {
@@ -134,7 +134,7 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-    .state('user.data',{
+    .state('user.data', {
       url: '/datos-personales',
       data: {
         title: 'Datos Personales'
@@ -146,7 +146,7 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-    .state('user.bank',{
+    .state('user.bank', {
       url: '/datos-bancarios',
       data: {
         title: 'Datos Bancarios'
@@ -158,7 +158,7 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-    .state('user.password',{
+    .state('user.password', {
       url: '/cambiar-contrasena',
       data: {
         title: 'Cambiar Contraseña'
@@ -170,7 +170,7 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-    .state('user.payments',{
+    .state('user.payments', {
       url: '/pagos',
       data: {
         title: 'Mis Pagos'
@@ -184,7 +184,7 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
     })
 
     // Ambassador
-    .state('ambassador',{
+    .state('ambassador', {
       url: '/campus/embajador',
       abstract: true,
       data: {
@@ -197,7 +197,7 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-    .state('ambassador.plan',{
+    .state('ambassador.plan', {
       url: '/plan',
       data: {
         title: 'PLan Embajador'
@@ -209,7 +209,7 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-    .state('ambassador.list',{
+    .state('ambassador.list', {
       url: '/lista',
       data: {
         title: 'Embajadores'
@@ -221,7 +221,7 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-    .state('ambassador.preferencial',{
+    .state('ambassador.preferencial', {
       url: '/preferenciales',
       data: {
         title: 'Clientes Preferenciales'
@@ -233,7 +233,7 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-    .state('ambassador.financial',{
+    .state('ambassador.financial', {
       url: '/estado-financiero',
       data: {
         title: 'Estado Financiero'
@@ -245,7 +245,7 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-    .state('ambassador.billing',{
+    .state('ambassador.billing', {
       url: '/facturacion',
       data: {
         title: 'Facturación'
