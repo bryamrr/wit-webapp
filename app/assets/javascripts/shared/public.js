@@ -6,6 +6,6 @@ $(document).on('turbolinks:load', function () {
     console.log("team-list");
   });
   $("#settings").click(function () {
-    console.log("settings");
+    $(".aside-menu").toggleClass("open");
   });
 });

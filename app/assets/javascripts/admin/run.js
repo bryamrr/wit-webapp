@@ -1,5 +1,5 @@
 angular
-  .module('campus-app')
+  .module('admin-app')
   .run(runBlock);
 
 runBlock.$inject = ['$rootScope', '$state', 'AuthService'];
