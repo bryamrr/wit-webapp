@@ -15,33 +15,27 @@ class UsersController < ApplicationController
       )
 
     if @user.save
+      update_teams(@user, 1)
       MailchimpWrapper.subscribe(@user)
-      redirect_to "/bienvenido"
+      redirect_to "/login"
     else
       puts "Falló"
     end
   end
 
-  def login
-    # data = {
-    #   nickname: params[:user][:nickname],
-    #   password: params[:user][:password]
-    # }
-    # user = User.authenticate(data)
+  def update_teams(user, level)
+    if user[:sponsor] != ""
+      father = User.where(nickname: user[:sponsor]).first
 
-    # if user
-    #   token = user.tokens.create
+      father.teams.create(
+        sponsored: user[:nickname],
+        level: level
+      )
 
-    #   puts user.role[:name]
+      level = level + 1
 
-    #   if user.role[:name] == "Admin"
-    #     redirect_to("/admin/inicio", :user => user)
-    #   else
-    #     redirect_to "/campus/inicio"
-    #   end
-    # else
-    #   puts "Falló"
-    # end
+      update_teams(father, level) unless father[:sponsor] == nil || level > 5
+    end
   end
 
   def user_params

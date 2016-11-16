@@ -2,16 +2,16 @@
   <div class="outer-container">
   <div class="form-container">
     <h3>CAMPUS VIRTUAL</h3>
-    <%= form_for :user do |f| %>
+    <form>
       <div class="form-input">
-        <%= f.text_field(:nickname, placeholder: 'Nombre de usuario') %>
+        <input id="nickname" type="text" placeholder="Nombre de usuario" />
       </div>
       <div class="form-input">
-        <%= f.password_field(:password, placeholder: 'Contraseña') %>
+        <input id="password" type="password" placeholder="Contraseña" />
       </div>
       <a href="#" class="forgot-password">¿Has olvidado tu <br />usuario o contraseña?</a>
-      <%= f.submit 'Ingresar' %>
-    <% end %>
+      <button type="button" id="login-button">Ingresar</button>
+    </form>
     <p class="new-user">¿No tienes una cuenta? <%= link_to "¡REGÍSTRATE!", "/registro" %></p>
   </div>
   </div>

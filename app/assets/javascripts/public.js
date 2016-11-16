@@ -31,6 +31,33 @@ $(document).on('turbolinks:load', function () {
       placeholder: "Escoge una provincia..."
     });
   });
+
+  $("#login-button").click(function() {
+    var data = {
+      nickname: $("#nickname").val(),
+      password: $("#password").val()
+    };
+    data = JSON.stringify(data);
+
+    var location = window.location;
+    var baseUrl = location.protocol + "//" + location.host + "/"
+    var url = baseUrl + "/api/v1/users/login";
+
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: data,
+      success: function (data) {
+        if (data.role === "Admin") {
+          window.location.href = baseUrl + "admin/inicio";
+        } else {
+          window.location.href = baseUrl + "campus/inicio";
+        }
+      },
+      contentType: 'application/json',
+      dataType: 'JSON'
+    });
+  });
 });
 
 $(window).scroll(function() {

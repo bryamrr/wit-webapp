@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :tokens, :dependent => :destroy
   has_many :enrollments
   has_many :movements
+  has_many :teams
 
   validates :nickname, presence: true, uniqueness: true
   validates_length_of :nickname, :in => 2..15
@@ -18,6 +19,21 @@ class User < ApplicationRecord
   validates_format_of :password, :with => /\A(?=.{6,14})(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!*]).*\z/
 
   before_create :encrypt_password
+  before_save :default_values
+
+  private
+  def default_values
+    self.first_entry = false
+    self.balance = 0
+    self.historical_balance = 0
+    self.preferencial = false
+    self.ambassador = false
+    self.ambassador_active = false
+    self.ambassador_start = false
+    self.login_attempts = 0
+    self.block = false
+    self.paydate_expire = false
+  end
 
   private
   def encrypt_password
