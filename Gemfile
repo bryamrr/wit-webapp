@@ -16,6 +16,8 @@ gem 'coffee-rails', '~> 4.2'
 
 #Normalize styles
 gem 'normalize-rails'
+
+gem 'selectize-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -24,6 +26,10 @@ gem "typedjs-rails", "~> 1.0.4"
 gem "font-awesome-rails"
 
 gem 'owlcarousel-rails'
+
+gem 'valid_email'
+
+gem 'bcrypt', '~> 3.1.7'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
@@ -36,13 +42,21 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'rspec-rails'
+
+gem 'mailchimp-api', require: 'mailchimp'
+gem 'figaro'
+
+gem 'angular-rails-templates'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 
   gem 'sqlite3'
+  gem 'shoulda-matchers'
+  gem 'rspec-rails'
+  gem 'factory_girl'
+  gem 'capybara'
 end
 
 group :development do

@@ -4,7 +4,7 @@
     <%= form_for :user do |f| %>
       <div class="form-input">
         <figure><%= image_tag("inputs/name.png") %></figure><!--
-        --><%= f.text_field(:name, placeholder: 'Nombres y Apellidos') %>
+        --><%= f.text_field(:fullname, placeholder: 'Nombres y Apellidos') %>
       </div>
       <div class="form-input">
         <figure><%= image_tag("inputs/email.png") %></figure><!--
@@ -24,11 +24,11 @@
       </div>
       <div class="form-input">
         <figure><%= image_tag("inputs/district.png") %></figure><!--
-        --><%= f.text_field(:district, placeholder: 'Distrito') %>
+        --><%= f.collection_select(:province, Province.all, :id, :name, :include_blank => true) %>
       </div>
       <div class="form-input">
         <figure><%= image_tag("inputs/referral.png") %></figure><!--
-        --><%= f.text_field(:referral, placeholder: 'Invitado por') %>
+        --><%= f.text_field(:sponsor, placeholder: 'Invitado por') %>
       </div>
       <%= f.submit '¡REGISTRARME!' %>
     <% end %>

@@ -13,15 +13,19 @@
  *= require normalize-rails
  *= require font-awesome
  *= require owl.carousel
+ *= require selectize
+ *= require selectize.default
  *= require_self
  */
 
  @import 'variables';
+ @import 'override';
  @import 'base';
  @import 'home';
  @import 'courses';
  @import 'money';
  @import 'certificates';
  @import 'register';
+ @import 'login';
 
  @import 'vendor/typed'
