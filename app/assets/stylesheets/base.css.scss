@@ -401,3 +401,19 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
+
+label.error {
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  font-size: .75em;
+  box-sizing: border-box;
+  color: white;
+  display: block;
+  background-color: lighten(red, 30);
+  padding: .2em .5em;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+}

@@ -18,6 +18,51 @@ $(document).on('turbolinks:load', function () {
     return c ? c.pop() : '';
   }
 
+  $.validator.methods.regex = function (value, element, regexp) {
+    var re = new RegExp(regexp);
+    return this.optional(element) || re.test(value);
+  };
+
+  $("form#register-form").validate({
+    // Specify validation rules
+    rules: {
+      // The key name on the left side is the name attribute
+      // of an input field. Validation rules are defined
+      // on the right side
+      fullname: "required",
+      email: {
+        required: true,
+        // Specify that email should be validated
+        // by the built-in "email" rule
+        email: true
+      },
+      nickname: "required",
+      password: {
+        required: true,
+        minlength: 6,
+        regex: /(?=.{6,14})(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!*]).*/
+      },
+      dni: "required"
+    },
+    // Specify validation error messages
+    messages: {
+      fullname: "Por favor, ingrese su nombre completo",
+      email: "Por favor, ingrese un correo válido",
+      nickname: "Por favor, ingrese un nombre de usuario válido",
+      password: {
+        required: "Por favor, ingrese una contraseña",
+        minlength: "Mínimo 6 caracteres",
+        regex: "Debe contener mayúsculas, minúsculas, números y al menos un caracter especial (@#$%^&+=!*)"
+      },
+      dni: "Por favor, ingrese su DNI"
+    },
+    // Make sure the form is submitted to the destination defined
+    // in the "action" attribute of the form when valid
+    submitHandler: function(form) {
+      form.submit();
+    }
+  });
+
   $("#typed").typed({
     stringsElement: $('#typed-strings'),
     startDelay: 300,
