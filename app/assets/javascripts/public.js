@@ -24,16 +24,10 @@ $(document).on('turbolinks:load', function () {
   };
 
   $("form#register-form").validate({
-    // Specify validation rules
     rules: {
-      // The key name on the left side is the name attribute
-      // of an input field. Validation rules are defined
-      // on the right side
       fullname: "required",
       email: {
         required: true,
-        // Specify that email should be validated
-        // by the built-in "email" rule
         email: true
       },
       nickname: "required",
@@ -44,7 +38,6 @@ $(document).on('turbolinks:load', function () {
       },
       dni: "required"
     },
-    // Specify validation error messages
     messages: {
       fullname: "Por favor, ingrese su nombre completo",
       email: "Por favor, ingrese un correo válido",
@@ -56,9 +49,31 @@ $(document).on('turbolinks:load', function () {
       },
       dni: "Por favor, ingrese su DNI"
     },
-    // Make sure the form is submitted to the destination defined
-    // in the "action" attribute of the form when valid
     submitHandler: function(form) {
+      $("input[type=submit]").attr("disabled", true);
+      form.submit();
+    }
+  });
+
+  $("form#login-form").validate({
+    rules: {
+      nickname: "required",
+      password: {
+        required: true,
+        minlength: 6,
+        regex: /(?=.{6,14})(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!*]).*/
+      }
+    },
+    messages: {
+      nickname: "Por favor, ingrese un nombre de usuario válido",
+      password: {
+        required: "Por favor, ingrese una contraseña",
+        minlength: "Mínimo 6 caracteres",
+        regex: "Debe contener mayúsculas, minúsculas, números y al menos un caracter especial (@#$%^&+=!*)"
+      }
+    },
+    submitHandler: function(form) {
+      $("#login-button").attr("disabled", false);
       form.submit();
     }
   });
@@ -94,6 +109,14 @@ $(document).on('turbolinks:load', function () {
     $('select').selectize({
       placeholder: "Escoge una provincia..."
     });
+  });
+
+  $('.main-login input#password').on('keyup blur', function () {
+      if ($('#login-form').valid()) {
+        $('#login-button').prop('disabled', false);
+      } else {
+          $('#login-button').prop('disabled', 'disabled');
+      }
   });
 
   $("#login-button").click(function() {
