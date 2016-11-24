@@ -28,20 +28,20 @@ ActiveRecord::Schema.define(version: 20161116203754) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "c_modules", force: :cascade do |t|
-    t.integer  "course_id"
-    t.string   "title"
-    t.integer  "number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["course_id"], name: "index_c_modules_on_course_id"
-  end
-
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.string   "logo_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "cmodules", force: :cascade do |t|
+    t.integer  "course_id"
+    t.string   "title"
+    t.integer  "number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_cmodules_on_course_id"
   end
 
   create_table "countries", force: :cascade do |t|

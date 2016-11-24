@@ -1,6 +1,6 @@
-class CreateCModules < ActiveRecord::Migration[5.0]
+class CreateCmodules < ActiveRecord::Migration[5.0]
   def change
-    create_table :c_modules do |t|
+    create_table :cmodules do |t|
       t.references :course, foreign_key: true
       t.string :title
       t.integer :number
