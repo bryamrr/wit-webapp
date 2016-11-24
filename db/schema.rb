@@ -35,15 +35,6 @@ ActiveRecord::Schema.define(version: 20161116203754) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "cmodules", force: :cascade do |t|
-    t.integer  "course_id"
-    t.string   "title"
-    t.integer  "number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["course_id"], name: "index_cmodules_on_course_id"
-  end
-
   create_table "countries", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -131,6 +122,15 @@ ActiveRecord::Schema.define(version: 20161116203754) do
     t.index ["user_id"], name: "index_movements_on_user_id"
   end
 
+  create_table "parts", force: :cascade do |t|
+    t.integer  "course_id"
+    t.string   "title"
+    t.integer  "number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_parts_on_course_id"
+  end
+
   create_table "paymethods", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -172,10 +172,10 @@ ActiveRecord::Schema.define(version: 20161116203754) do
   end
 
   create_table "quizzes", force: :cascade do |t|
-    t.integer  "CModule_id"
+    t.integer  "part_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["CModule_id"], name: "index_quizzes_on_CModule_id"
+    t.index ["part_id"], name: "index_quizzes_on_part_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -205,13 +205,13 @@ ActiveRecord::Schema.define(version: 20161116203754) do
   end
 
   create_table "topics", force: :cascade do |t|
-    t.integer  "CModule_id"
+    t.integer  "part_id"
     t.string   "title"
     t.string   "video_url"
     t.integer  "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["CModule_id"], name: "index_topics_on_CModule_id"
+    t.index ["part_id"], name: "index_topics_on_part_id"
   end
 
   create_table "types", force: :cascade do |t|
