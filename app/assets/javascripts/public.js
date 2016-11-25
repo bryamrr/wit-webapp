@@ -1,3 +1,21 @@
+toastr.options = {
+  "closeButton": false,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": false,
+  "positionClass": "toast-top-full-width",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "500",
+  "timeOut": "2000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
+
 $(document).on('turbolinks:load', function () {
 
   var token = checkCookie("token");
@@ -13,7 +31,7 @@ $(document).on('turbolinks:load', function () {
     }
   }
 
-  function checkCookie(key, c){
+  function checkCookie(key, c1){
     c = document.cookie.match('(^|;)\\s*' + key + '\\s*=\\s*([^;]+)');
     return c ? c.pop() : '';
   }
@@ -65,7 +83,7 @@ $(document).on('turbolinks:load', function () {
       }
     },
     messages: {
-      nickname: "Por favor, ingrese un nombre de usuario válido",
+      nickname: "Por favor, ingrese un usuario válido",
       password: {
         required: "Por favor, ingrese una contraseña",
         minlength: "Mínimo 6 caracteres",
@@ -142,6 +160,16 @@ $(document).on('turbolinks:load', function () {
           window.location.href = baseUrl + "admin/inicio";
         } else {
           window.location.href = baseUrl + "campus/inicio";
+        }
+      },
+      error: function(XMLHttpRequest, textStatus, errorThrown) {
+        console.log("ERROR!");
+        console.log("xml", XMLHttpRequest);
+        console.log("textstatus", textStatus);
+        console.log("error", errorThrown);
+
+        if (errorThrown === "Unauthorized") {
+          toastr.error('El usuario no existe o las credenciales son incorrectas');
         }
       },
       contentType: 'application/json',

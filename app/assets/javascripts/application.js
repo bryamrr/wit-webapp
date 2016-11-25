@@ -16,5 +16,6 @@
 //= require owl.carousel
 //= require turbolinks
 //= require typed
+//= require vendors/toastr.min
 //= require public
 //= require_tree .
