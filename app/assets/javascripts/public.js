@@ -43,29 +43,29 @@ $(document).on('turbolinks:load', function () {
 
   $("form#register-form").validate({
     rules: {
-      fullname: "required",
-      email: {
+      'user[fullname]': "required",
+      'user[email]': {
         required: true,
         email: true
       },
-      nickname: "required",
-      password: {
+      'user[nickname]': "required",
+      'user[password]': {
         required: true,
         minlength: 6,
         regex: /(?=.{6,14})(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!*]).*/
       },
-      dni: "required"
+      'user[dni]': "required"
     },
     messages: {
-      fullname: "Por favor, ingrese su nombre completo",
-      email: "Por favor, ingrese un correo válido",
-      nickname: "Por favor, ingrese un nombre de usuario válido",
-      password: {
+      'user[fullname]': "Por favor, ingrese su nombre completo",
+      'user[email]': "Por favor, ingrese un correo válido",
+      'user[nickname]': "Por favor, ingrese un nombre de usuario válido",
+      'user[password]': {
         required: "Por favor, ingrese una contraseña",
         minlength: "Mínimo 6 caracteres",
         regex: "Debe contener mayúsculas, minúsculas, números y al menos un caracter especial (@#$%^&+=!*)"
       },
-      dni: "Por favor, ingrese su DNI"
+      'user[dni]': "Por favor, ingrese su DNI"
     },
     submitHandler: function(form) {
       $("input[type=submit]").attr("disabled", true);

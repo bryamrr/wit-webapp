@@ -20,6 +20,7 @@ class UsersController < ApplicationController
       redirect_to "/login"
     else
       puts "Falló"
+      puts @user.errors.to_json
     end
   end
 

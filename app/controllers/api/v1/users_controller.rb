@@ -17,7 +17,9 @@ class Api::V1::UsersController < Api::V1::BaseController
 
   # POST /api/v1/users/logout
   def logout
-    token = Token.find_by(token: bearer_token)
+
+    token = Token.where(token: params[:data][:token]).first
+
     if token.delete
       render :json => { :message => "El token ha expirado" }
     else
