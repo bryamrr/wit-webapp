@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161116203754) do
+ActiveRecord::Schema.define(version: 20161128180137) do
 
   create_table "alternatives", force: :cascade do |t|
     t.integer  "question_id"
@@ -47,12 +47,16 @@ ActiveRecord::Schema.define(version: 20161116203754) do
     t.text     "description"
     t.text     "goal"
     t.boolean  "starred"
-    t.boolean  "pricetag"
+    t.decimal  "pricetag"
     t.string   "duration"
     t.string   "background_url"
     t.string   "video_url"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "priority"
+    t.decimal  "discount"
+    t.boolean  "published"
+    t.boolean  "free"
     t.index ["category_id"], name: "index_courses_on_category_id"
   end
 

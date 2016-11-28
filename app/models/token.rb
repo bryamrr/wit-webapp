@@ -14,6 +14,6 @@ class Token < ApplicationRecord
     begin
       self.token = SecureRandom.hex
     end while Token.where(token: self.token).any?
-    self.expires_at ||= 1.month.from_now
+    self.expires_at ||= 1.day.from_now
   end
 end
