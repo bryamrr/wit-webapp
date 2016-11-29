@@ -165,5 +165,10 @@
   </header>
   <header-bread-crumb>
   </header-bread-crumb>
-  <main ui-view="content" class="animate-fade-left" id="contenido"></main>
+  <main class="animate-fade-left content-view" id="contenido">
+    <div class="loading-content loading-content-js">
+      <img src="/loading-content.svg" alt="" />
+    </div>
+    <div ui-view="content" class="wrapper-content"></div>
+  </main>
 </div>

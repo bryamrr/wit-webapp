@@ -1,10 +1,61 @@
-<div class="align-center">
-  <br>
-  <br>
-  <br>
-  <i class="fa fa-bullhorn fa-3x"></i>
-  <br>
-  <br>
-  <h1>En construcción</h1>
-  <p>Usuario / Datos Personales</p>
+<div class="card-with-image">
+  <div class="header-background">
+    <figure class="avatar">
+      <img src="/user-avatar.png" alt="" />
+    </figure>
+    <h2>{{user.fullname}}</h2>
+  </div>
+  <div class="full-container">
+    <div class="two-cols-form">
+      <div class="form-input">
+        <label for="">Usuario:</label>
+        <input type="text" ng-model="user.nickname" />
+      </div>
+      <div class="form-input">
+        <label for="">Nombres y Apellidos:</label>
+        <input type="text" ng-model="user.fullname" />
+      </div>
+    </div>
+    <div class="two-cols-form">
+      <div class="form-input">
+        <label for="">Email:</label>
+        <input type="email" ng-model="user.email" />
+      </div>
+      <div class="form-input">
+        <label for="">Celular:</label>
+        <input type="text" ng-model="user.phone" />
+      </div>
+    </div>
+    <div class="two-cols-form">
+      <div class="form-input">
+        <label for="">Tipo de documento:</label>
+        <input type="text" />
+      </div>
+      <div class="form-input">
+        <label for="">DNI:</label>
+        <input type="text" ng-model="user.dni" />
+      </div>
+    </div>
+    <div class="two-cols-form">
+      <div class="form-input">
+        <label for="">Dirección:</label>
+        <input type="text" ng-model="user.address" />
+      </div>
+      <div class="form-input">
+        <label for="">Provincia:</label>
+        <input type="text" />
+      </div>
+    </div>
+    <div class="two-cols-form">
+      <div class="form-input">
+        <label for="">Sexo:</label>
+        <input type="text" />
+      </div>
+      <div class="form-input">
+        <label for="">Invitado por:</label>
+        <input type="text" ng-model="user.sponsor" />
+      </div>
+    </div>
+    <button>GUARDAR CAMBIOS</button>
+  </div>
 </div>
