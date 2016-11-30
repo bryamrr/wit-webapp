@@ -1,8 +1,8 @@
 angular.module("campus-app").controller("UserPasswordController", UserPasswordController);
 
-UserPasswordController.$inject = ['$scope', 'urls', 'CookieService', 'HttpRequest', 'toastr'];
+UserPasswordController.$inject = ['$scope', 'urls', 'CookieService', 'HttpRequest', 'toastr', 'validators'];
 
-function UserPasswordController($scope, urls, CookieService, HttpRequest, toastr) {
+function UserPasswordController($scope, urls, CookieService, HttpRequest, toastr, validators) {
   $scope.showPassword = showPassword;
   $scope.changePassword = changePassword;
 
@@ -29,7 +29,9 @@ function UserPasswordController($scope, urls, CookieService, HttpRequest, toastr
     ($scope.passwords[type] === 'password') ? $scope.passwords[type] = 'text' : $scope.passwords[type] = 'password';
   }
 
-  function changePassword(oldPassword, newPassword) {
+  function changePassword(form, oldPassword, newPassword) {
+    if(!form.validate()) return false;
+
     var data = {
       old_password: oldPassword,
       new_password: newPassword
@@ -43,4 +45,56 @@ function UserPasswordController($scope, urls, CookieService, HttpRequest, toastr
       toastr.error(error.message);
     });
   }
+
+  /* ----------------------------------- */
+  /* FORM VALIDATE */
+  /* ----------------------------------- */
+  $scope.validationOptions = {
+      debug: false,
+      rules: {
+        old_password: {
+          required: true
+        },
+        new_password: {
+          required: true,
+          minlength: 6,
+          regex: validators.password
+        },
+        repeat_new_password: {
+          required: 'Dato requerido',
+          equalTo: '#new_password',
+          regex: validators.password
+        },
+      },
+      messages: {
+        old_password: {
+          required: 'Dato requerido'
+        },
+        new_password: {
+          required: 'Dato requerido',
+          minlength: 'Mínimo 6 caracteres',
+          regex: 'Debe contener mayúsculas, minúsculas, números y caracteres especiales'
+        },
+        repeat_new_password: {
+          required: 'Dato requerido',
+          equalTo: 'Las contraseñas no coinciden',
+          regex: 'Debe contener mayúsculas, minúsculas, números y caracteres especiales'
+        }
+      },
+      highlight: function (element) {
+        $(element).parents('div').addClass('error');
+        $(element).parents('form').addClass('error');
+        $(element).parent('div').addClass('error');
+        $(element).addClass('error');
+      },
+      unhighlight: function (element) {
+        $(element).parents('div').removeClass('error');
+        $(element).parents('form').removeClass('error');
+        $(element).parent('div').removeClass('error');
+        $(element).removeClass('error');
+      },
+      errorElement: "div",
+      errorClass:'error error-input',
+      validClass:'valid valid-input'
+    }
 }
