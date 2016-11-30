@@ -1,8 +1,8 @@
 angular.module("campus-app").controller("UserPasswordController", UserPasswordController);
 
-UserPasswordController.$inject = ['$scope', 'urls', 'CookieService', 'HttpRequest'];
+UserPasswordController.$inject = ['$scope', 'urls', 'CookieService', 'HttpRequest', 'toastr'];
 
-function UserPasswordController($scope, urls, CookieService, HttpRequest) {
+function UserPasswordController($scope, urls, CookieService, HttpRequest, toastr) {
   $scope.showPassword = showPassword;
   $scope.changePassword = changePassword;
 
@@ -38,10 +38,9 @@ function UserPasswordController($scope, urls, CookieService, HttpRequest) {
     var promise = HttpRequest.send("PUT", url, data);
 
     promise.then(function (response) {
-      console.log(response);
+      toastr.success(response.message);
     }, function(error){
-      // MessagesService.display(error.errors, "error");
-      console.log(error);
+      toastr.error(error.message);
     });
   }
 }

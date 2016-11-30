@@ -52,10 +52,10 @@ class Api::V1::UsersController < Api::V1::BaseController
         user.update_attribute(:encrypted_password, new_encrypted_password)
         render :json => { :message => "Cambio de contraseña correcto" }
       else
-        render :json => { :message => "No se pudo cambiar la contraseña" }
+        render :json => { :message => "No se pudo cambiar la contraseña" }, status: :not_found
       end
     else
-      render :json => { :message => "No se pudo cambiar la contraseña" }
+      render :json => { :message => "No se pudo cambiar la contraseña" }, status: :not_found
     end
   end
 

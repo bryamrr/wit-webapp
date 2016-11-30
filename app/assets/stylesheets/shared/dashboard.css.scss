@@ -158,54 +158,6 @@ md-autocomplete.md-default-theme, md-autocomplete {
 }
 
 
-/* ********************************* */
-/* SOBREESCRIBE TOAST */
-/* ********************************* */
-md-toast.custom .md-action{
-  margin-right: 0;
-  background-color: rgba(255,255,255,0.1);
-  -webkit-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease;
-}
-md-toast .md-toast-content{padding-right: 7px; line-height: 1.2em}
-md-toast .md-toast-content .md-button{padding: 6px;}
-md-toast .md-toast-content a{font-weight: bold; color: inherit; border-bottom: 1px solid #fff;
-  -webkit-transition: border-color .5s;
-  -moz-transition: border-color .5s;
-  -ms-transition: border-color .5s;
-  transition: border-color .5s;
-}
-md-toast .md-toast-content a:hover{border-bottom-color: transparent;}
-md-toast.custom.md-center{
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  max-width: 360px;
-  position: fixed;
-}
-md-toast.custom .md-action svg{
-  fill: #fff;
-}
-md-toast.custom .md-action:hover{
-  background-color: rgba(255,255,255,0.25);
-}
-md-toast.custom.error .md-toast-content{
-  background-color: #fc5a5a;
-}
-md-toast.custom.success .md-toast-content{
-  background-color: #4caf50;
-}
-md-toast.custom.warning .md-toast-content{
-  background-color: #f7a80d;
-}
-@media (max-width: 600px){
-  md-toast.custom.md-center{
-    max-width: 100%;
-  }
-}
-
-
 
 
 
@@ -1329,7 +1281,6 @@ md-content.padding-15 {padding: 15px;}
   #wrapper, #wrapper.aside-fixed {
     padding-left: 0;
   }
-  md-toast{bottom: auto;}
 
   #wrapper #header-admin, #wrapper.header-fixed #header-admin {
     left: 0;
