@@ -54,4 +54,20 @@ class User < ApplicationRecord
       return false
     end
   end
+
+  def self.change(old_password, new_password, nickname)
+    puts "HEREEEEEEEE"
+    user = User.find_by(nickname: nickname)
+    if (user)
+      encrypted_password = BCrypt::Engine.hash_secret(old_password, user[:salt])
+      if user[:encrypted_password] == encrypted_password
+        new_encrypted_password = BCrypt::Engine.hash_secret(new_password, user[:salt])
+        user.update(encrypted_password: new_encrypted_password)
+      else
+        return false
+      end
+    else
+      return false
+    end
+  end
 end

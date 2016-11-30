@@ -1,9 +1,8 @@
 class Api::V1::UsersController < Api::V1::BaseController
-  skip_before_filter :authenticate, :only => [:login, :logout]
+  skip_before_action :authenticate, :only => [:login]
 
   # POST /api/v1/users/login
   def login
-    puts params
     data = {nickname: params[:nickname], password: params[:password]}
     user = User.authenticate(data)
 
@@ -17,8 +16,7 @@ class Api::V1::UsersController < Api::V1::BaseController
 
   # POST /api/v1/users/logout
   def logout
-
-    token = Token.where(token: params[:data][:token]).first
+    token = Token.find_by(token: bearer_token)
 
     if token.delete
       render :json => { :message => "El token ha expirado" }
@@ -27,6 +25,7 @@ class Api::V1::UsersController < Api::V1::BaseController
     end
   end
 
+  # GET /api/v1/users/{nickname}
   def show
     user = User.find_by(nickname: params[:id])
     if @current_user == user
@@ -35,6 +34,28 @@ class Api::V1::UsersController < Api::V1::BaseController
       )
     else
       render :json => { :message => "Usuario no encontrado" }
+    end
+  end
+
+  # PUT /api/v1/users/{nickname}/change_password
+  def change_password
+    user = User.find_by(nickname: params[:nickname])
+    puts "====> INICIO"
+    puts user.to_json
+    if (user)
+      encrypted_password = BCrypt::Engine.hash_secret(params[:data][:old_password], user[:salt])
+      if user[:encrypted_password] == encrypted_password
+        new_encrypted_password = BCrypt::Engine.hash_secret(params[:data][:new_password], user[:salt])
+        puts "INICIO =====>"
+        puts user.to_json
+        puts new_encrypted_password
+        user.update_attribute(:encrypted_password, new_encrypted_password)
+        render :json => { :message => "Cambio de contraseña correcto" }
+      else
+        render :json => { :message => "No se pudo cambiar la contraseña" }
+      end
+    else
+      render :json => { :message => "No se pudo cambiar la contraseña" }
     end
   end
 
