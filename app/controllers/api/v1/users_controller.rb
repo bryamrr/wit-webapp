@@ -40,19 +40,14 @@ class Api::V1::UsersController < Api::V1::BaseController
   # PUT /api/v1/users/{nickname}/change_password
   def change_password
     user = User.find_by(nickname: params[:nickname])
-    puts "====> INICIO"
-    puts user.to_json
     if (user)
       encrypted_password = BCrypt::Engine.hash_secret(params[:data][:old_password], user[:salt])
       if user[:encrypted_password] == encrypted_password
         new_encrypted_password = BCrypt::Engine.hash_secret(params[:data][:new_password], user[:salt])
-        puts "INICIO =====>"
-        puts user.to_json
-        puts new_encrypted_password
         user.update_attribute(:encrypted_password, new_encrypted_password)
         render :json => { :message => "Cambio de contraseña correcto" }
       else
-        render :json => { :message => "No se pudo cambiar la contraseña" }, status: :not_found
+        render :json => { :message => "No se pudo cambiar la contraseña" }, status: :bad_request
       end
     else
       render :json => { :message => "No se pudo cambiar la contraseña" }, status: :not_found

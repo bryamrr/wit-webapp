@@ -16,13 +16,11 @@ function UserPasswordController($scope, urls, CookieService, HttpRequest, toastr
   var promise = HttpRequest.send("GET", url);
 
   promise.then(function (response) {
-    console.log(response);
     $scope.user = response;
     var $contenido = $('#contenido');
     $contenido.addClass("loaded");
   }, function(error){
-    // MessagesService.display(error.errors, "error");
-    console.log(error);
+    toastr.error("Hubo un error");
   });
 
   function showPassword(type) {
@@ -39,10 +37,14 @@ function UserPasswordController($scope, urls, CookieService, HttpRequest, toastr
     var url = urls.BASE_API + '/users/' + CookieService.read("nickname") + '/change_password';
     var promise = HttpRequest.send("PUT", url, data);
 
+    $scope.isLoading = true;
+
     promise.then(function (response) {
       toastr.success(response.message);
-    }, function(error){
+      $scope.isLoading = false;
+    }, function(error) {
       toastr.error(error.message);
+      $scope.isLoading = false;
     });
   }
 

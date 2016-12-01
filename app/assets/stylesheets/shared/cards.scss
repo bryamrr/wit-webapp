@@ -23,3 +23,15 @@
     width: 100%;
   }
 }
+
+.card-with-image {
+  h2 {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 2em;
+    font-weight: bold;
+  }
+  figure {
+    display: inline-block;
+  }
+}

@@ -19,6 +19,8 @@
 
  @import 'variables';
 
+ @import 'vendors/angular-toastr';
+
  @import 'shared/variables';
  @import 'shared/breadcrumb';
  @import 'shared/dashboard';
@@ -26,3 +28,4 @@
  @import 'shared/containers';
  @import 'shared/cards';
  @import 'shared/forms';
+ @import 'shared/loading';

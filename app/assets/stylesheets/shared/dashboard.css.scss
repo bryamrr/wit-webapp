@@ -998,7 +998,7 @@ md-content.padding-15 {padding: 15px;}
   transition: all .35s ease;
 }
 .nav > li > a:hover, .nav > li > a.active {
-  background-color: lighten($purple, 6);
+  background-color: #794597;
   color: #fff;
   cursor: pointer;
 }
@@ -2487,10 +2487,10 @@ table.md-table .eliminando td.md-cell {
 }
 .nav > li.active, .nav > li.open {
   border-left: 4px solid #f7a80d;
-  background-color: lighten($purple, 6);
+  background-color: #794597;
 }
 .nav > li.active > a, .nav > li.open > a {
-  background-color: lighten($purple, 6);
+  background-color: #794597;
   color: #fff;
 }
 .nav > li.active > a .inner ng-md-icon, .nav > li.open > a .inner ng-md-icon {
