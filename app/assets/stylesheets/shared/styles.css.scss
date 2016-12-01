@@ -122,3 +122,13 @@ button, input[type=submit], .button {
     color: $purple;
   }
 }
+
+button[disabled] {
+  cursor: default;
+  border: 3px solid $light-gray;
+  background-color: white;
+  color: #d7d7d7;
+  &:hover {
+    transform: scale(1);
+  }
+}
