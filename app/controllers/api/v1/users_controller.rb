@@ -8,7 +8,7 @@ class Api::V1::UsersController < Api::V1::BaseController
 
     if user
       token = user.tokens.create
-      render :json => { :token => token.token, :nickname => user.nickname, :role => user.role[:name] }
+      render :json => { :token => token.token, :nickname => user.nickname, :role => user.role[:name], :first_entry => user.first_entry }
     else
       render :json => { :errors => "Credenciales incorrectas" }, status: :unauthorized
     end

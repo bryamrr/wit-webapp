@@ -155,7 +155,8 @@ $(document).on('turbolinks:load', function () {
       success: function (data) {
         putCookie("role", data.role);
         putCookie("nickname", data.nickname);
-        putCookie("token", data.token)
+        putCookie("token", data.token);
+        putCookie("first_entry", data.first_entry);
         if (data.role === "Admin") {
           window.location.href = baseUrl + "admin/inicio";
         } else {

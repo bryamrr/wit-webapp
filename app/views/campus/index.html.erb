@@ -12,7 +12,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body ng-class="{ 'modal-opened': modalOpened }" data-id="{{modalOpened}}" ng-controller="DashboardController">
   <div ui-view="dashboard" id="wrapper-dashboard"></div>
+  <div class="modal">
+    <div class="helper"></div><!--
+    --><div class="modal-content display-inline">
+      <div class="card">
+        <div class="card-header">
+          <h2>Card Title</h2>
+          <span class="tagline">Descripción del card</span>
+          <a href="javascript:boid(0);" title="Cerrar" class="modal-btn-close">
+            <span class="helper"></span><!--
+            --><i class="icon-close display-inline"></i>
+          </a>
+        </div>
+        <div class="card-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam sint, nulla vitae quas corporis voluptate, animi dicta ratione illum enim distinctio excepturi dignissimos. Quos dolor enim quia, ipsam corrupti. Ducimus!</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti sequi sint modi ad fugit. Quisquam eos aspernatur officia, quae nihil iure non, asperiores, doloribus debitis dolor ea velit ratione eum!</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam sint, nulla vitae quas corporis voluptate, animi dicta ratione illum enim distinctio excepturi dignissimos. Quos dolor enim quia, ipsam corrupti. Ducimus!</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti sequi sint modi ad fugit. Quisquam eos aspernatur officia, quae nihil iure non, asperiores, doloribus debitis dolor ea velit ratione eum!</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam sint, nulla vitae quas corporis voluptate, animi dicta ratione illum enim distinctio excepturi dignissimos. Quos dolor enim quia, ipsam corrupti. Ducimus!</p>
+        </div>
+        <div class="card-footer">
+          <div class="row column-4">
+            <div class="column hide-large"></div>
+            <div class="column hide-large"></div>
+            <div class="column">
+              <a href="" class="button-bg success">Activar</a>
+            </div>
+            <div class="column">
+              <a href="" class="button-ln">Cancelar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
