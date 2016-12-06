@@ -1,11 +1,11 @@
-$(document).on('turbolinks:load', function () {
-  $("#shopping-cart").click(function () {
+$(document).on("ready", function () {
+  $("body").on('click', '#shopping-cart', function () {
     console.log("shopping-cart");
   });
-  $("#team-list").click(function () {
+  $("body").on('click', '#team-list', function () {
     console.log("team-list");
   });
-  $("#settings").click(function () {
+  $("body").on('click', '#settings', function () {
     $(".aside-menu").toggleClass("open");
   });
-});
+})
