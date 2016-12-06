@@ -92,3 +92,9 @@ input.input.input-has-value ~ label {
     color: $medium-gray;
   }
 }
+
+.select-input {
+  width: 18%;
+  .input { display: none; }
+  .selectize-control { margin-top: 8px; }
+}

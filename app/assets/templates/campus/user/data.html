@@ -5,57 +5,82 @@
     </figure>
     <h2>{{user.fullname}}</h2>
   </div>
-  <div class="full-container">
+  <div class="full-container card card-padding">
     <div class="two-cols-form">
       <div class="form-input">
-        <label for="">Usuario:</label>
-        <input type="text" ng-model="user.nickname" />
+        <input class="input" type="text" id="nickname" name="nickname" ng-model="user.nickname" required />
+        <div class="bar"></div>
+        <label class="label basic" for="nickname">Usuario:</label>
       </div>
       <div class="form-input">
-        <label for="">Nombres y Apellidos:</label>
-        <input type="text" ng-model="user.fullname" />
+        <input class="input" type="text" id="fullname" name="fullname" ng-model="user.fullname" required />
+        <div class="bar"></div>
+        <label class="label basic" for="fullname">Nombres y Apellidos:</label>
       </div>
     </div>
     <div class="two-cols-form">
       <div class="form-input">
-        <label for="">Email:</label>
-        <input type="email" ng-model="user.email" />
+        <input class="input" type="email" id="email" name="email" ng-model="user.email" required />
+        <div class="bar"></div>
+        <label class="label basic" for="email">Email:</label>
       </div>
       <div class="form-input">
-        <label for="">Celular:</label>
-        <input type="text" ng-model="user.phone" />
+        <input class="input" type="text" id="phone" name="phone" ng-model="user.phone" required />
+        <div class="bar"></div>
+        <label class="label basic" for="phone">Celular:</label>
       </div>
     </div>
     <div class="two-cols-form">
       <div class="form-input">
-        <label for="">Tipo de documento:</label>
-        <input type="text" />
+        <input class="input" type="text" id="type" name="type" disabled required />
+        <div class="bar"></div>
+        <label class="label basic" for="type">DNI</label>
       </div>
       <div class="form-input">
-        <label for="">DNI:</label>
-        <input type="text" ng-model="user.dni" />
+        <input class="input" type="text" id="dni" name="dni" ng-model="user.dni" required />
+        <div class="bar"></div>
+        <label class="label basic" for="dni">Número de documento:</label>
       </div>
     </div>
     <div class="two-cols-form">
       <div class="form-input">
-        <label for="">Dirección:</label>
-        <input type="text" ng-model="user.address" />
+        <input class="input" type="text" id="address" name="address" ng-model="user.address" required />
+        <div class="bar"></div>
+        <label class="label basic" for="address">Dirección:</label>
       </div>
-      <div class="form-input">
-        <label for="">Provincia:</label>
-        <input type="text" />
+      <div class="form-input select-input">
+        <select name="province" id="province" ng-value="user.province_id">
+          <option ng-repeat="province in provinces" ng-value="{{province.id}}">{{province.name}}</option>
+        </select>
+        <input class="input" type="text" id="province" name="province" ng-model="user.province" required />
+        <div class="bar"></div>
+        <label class="label basic" for="province">Provincia:</label>
       </div>
     </div>
     <div class="two-cols-form">
-      <div class="form-input">
-        <label for="">Sexo:</label>
-        <input type="text" />
+      <div class="form-input select-input">
+        <select name="gender" id="gender" ng-model="user.gender">
+          <option value=""></option>
+          <option value="'Masculino'">Masculino</option>
+          <option value="'Femenino'">Femenino</option>
+        </select>
+        <input class="input" type="text" id="gender" name="gender" ng-model="user.gender" required />
+        <div class="bar"></div>
+        <label class="label basic" for="gender">Sexo:</label>
       </div>
       <div class="form-input">
-        <label for="">Invitado por:</label>
-        <input type="text" ng-model="user.sponsor" />
+        <input class="input" type="text" id="sponsor" name="sponsor" disabled required />
+        <div class="bar"></div>
+        <label class="label basic" for="sponsor"><span ng-if="user.sponsor"> Invitado por {{user.sponsor}}</span></label>
       </div>
     </div>
-    <button>GUARDAR CAMBIOS</button>
+    <div class="form-input">
+      <button type="submit" ng-disabled="form.$invalid || isLoading">
+        GUARDAR CAMBIOS
+        <div class="loader-wrapper" ng-show="isLoading">
+          <div class="loader-circles" id="loader">Loading...</div>
+        </div>
+      </button>
+    </div>
   </div>
 </div>

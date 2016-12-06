@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require selectize
 //= require vendors/angular
 //= require vendors/angular-ui-router
 //= require vendors/angular-animate

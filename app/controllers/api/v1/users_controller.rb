@@ -37,7 +37,8 @@ class Api::V1::UsersController < Api::V1::BaseController
     user = User.find_by(nickname: params[:id])
     if @current_user == user
       render :json => user.to_json(
-        :except => [:created_at, :updated_at, :encrypted_password, :salt]
+        :except => [:created_at, :updated_at, :encrypted_password, :salt],
+        :include => [:province => { }]
       )
     else
       render :json => { :message => "Usuario no encontrado" }
