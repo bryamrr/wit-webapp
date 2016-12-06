@@ -200,7 +200,7 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('ambassador.plan', {
       url: '/plan',
       data: {
-        title: 'PLan Embajador'
+        title: 'Plan Embajador'
       },
       views: {
         'content@ambassador': {

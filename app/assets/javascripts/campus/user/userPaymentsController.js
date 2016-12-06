@@ -4,4 +4,7 @@ UserPaymentsController.$inject = ['$scope'];
 
 function UserPaymentsController($scope) {
   console.log("UserPaymentsController");
+
+  var $contenido = $('#contenido');
+  $contenido.addClass("loaded");
 }

@@ -6,7 +6,15 @@ function DashboardController($scope, $state,  CookieService) {
   $scope.role = CookieService.read('role');
   $scope.first_entry = CookieService.read('first_entry');
 
+  $scope.goAmbassador = goAmbassador;
+
   if ($scope.first_entry === 'false') {
     $scope.modalOpened = true;
+  }
+
+  function goAmbassador() {
+    $scope.modalOpened = false;
+    $state.go('ambassador.plan');
+    CookieService.put('first_entry', 'true');
   }
 }

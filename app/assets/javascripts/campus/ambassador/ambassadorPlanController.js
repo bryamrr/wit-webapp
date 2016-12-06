@@ -4,4 +4,7 @@ AmbassadorPlanController.$inject = ['$scope'];
 
 function AmbassadorPlanController($scope) {
   console.log("AmbassadorPlanController");
+
+  var $contenido = $('#contenido');
+  $contenido.addClass("loaded");
 }

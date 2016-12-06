@@ -261,4 +261,4 @@ ucayali.provinces.create(name: "Padre Abad")
 ucayali.provinces.create(name: "Purús")
 
 User.create(nickname: "lcontreras", password: "A3eilm2s2u!", role: role_admin, province: province_ica, email: "lidercontreras22@gmail.com", dni: "12345678")
-User.create(nickname: "brodriguez", password: "A3eilm2s2u!", role: role_student, province: province_ica, email: "brodriguez@gmail.com", dni: "12345678")
+User.create(nickname: "brodriguez", password: "A3eilm2s2u!", role: role_student, province: province_ica, email: "brodriguez@gmail.com", dni: "12345679")

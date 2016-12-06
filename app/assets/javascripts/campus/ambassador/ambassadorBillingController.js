@@ -4,4 +4,7 @@ AmbassadorBillingController.$inject = ['$scope'];
 
 function AmbassadorBillingController($scope) {
   console.log("AmbassadorBillingController");
+
+  var $contenido = $('#contenido');
+  $contenido.addClass("loaded");
 }
