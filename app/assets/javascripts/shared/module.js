@@ -1,1 +1,4 @@
-angular.module("shared", ['toastr'])
+angular.module("shared", [
+  'toastr',
+  'selectize'
+]);

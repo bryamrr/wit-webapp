@@ -14,9 +14,9 @@ class User < ApplicationRecord
   validates :email, presence: true, email: true
   validates :role, presence: true
   validates :province, presence: true
-  validates :password, presence: true
+  validates :password, presence: true, on: :create
   validates :dni, presence: true, uniqueness: true
-  validates_format_of :password, :with => /\A(?=.{6,14})(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!*]).*\z/
+  validates_format_of :password, :with => /\A(?=.{6,14})(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!*]).*\z/, on: :create
 
   before_create :encrypt_password
   before_save :default_values

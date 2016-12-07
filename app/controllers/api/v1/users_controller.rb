@@ -62,4 +62,31 @@ class Api::V1::UsersController < Api::V1::BaseController
     end
   end
 
+  # PUT /api/v1/users/{nickname}
+  def update
+    puts "AQUI =====>"
+    puts params.to_json
+    puts "AQUI =====>"
+    user = User.find_by(nickname: params[:id])
+
+    if user.update(update_params)
+      render :json => { :message => "Datos actualizados" }
+    else
+      puts user.errors.to_json
+      render :json => { :message => "No se pudo cambiar la contraseña" }, status: :bad_request
+    end
+  end
+
+  def update_params
+    params.require(:data).permit(
+      :fullname,
+      :email,
+      :phone,
+      :dni,
+      :address,
+      :province_id,
+      :gender
+    )
+  end
+
 end
