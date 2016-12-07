@@ -26,7 +26,7 @@
           <label class="label basic" for="email">Email:</label>
         </div>
         <div class="form-input">
-          <input class="input" type="text" id="phone" name="phone" ng-model="user.phone" required />
+          <input class="input" type="text" id="phone" name="phone" ng-model="user.phone" />
           <div class="bar"></div>
           <label class="label basic" for="phone">Celular:</label>
         </div>
@@ -45,7 +45,7 @@
       </div>
       <div class="two-cols-form">
         <div class="form-input">
-          <input class="input" type="text" id="address" name="address" ng-model="user.address" required />
+          <input class="input" type="text" id="address" name="address" ng-model="user.address" />
           <div class="bar"></div>
           <label class="label basic" for="address">Dirección:</label>
         </div>
@@ -70,7 +70,7 @@
         </div>
       </div>
       <div class="form-input">
-        <button type="submit">
+        <button type="submit" ng-disabled="form.$invalid || isLoading">
           GUARDAR CAMBIOS
           <div class="loader-wrapper" ng-show="isLoading">
             <div class="loader-circles" id="loader">Loading...</div>

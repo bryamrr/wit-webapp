@@ -1,8 +1,8 @@
 angular.module("campus-app").controller("UserDataController", UserDataController);
 
-UserDataController.$inject = ['$scope', '$q', 'urls', 'CookieService', 'HttpRequest'];
+UserDataController.$inject = ['$scope', '$q', 'urls', 'CookieService', 'HttpRequest', 'validators', 'toastr'];
 
-function UserDataController($scope, $q, urls, CookieService, HttpRequest) {
+function UserDataController($scope, $q, urls, CookieService, HttpRequest, validators, toastr) {
   $scope.updateData = updateData;
 
   $scope.provinceConfig = {
@@ -48,8 +48,9 @@ function UserDataController($scope, $q, urls, CookieService, HttpRequest) {
   });
 
   function updateData(form, user) {
-    // if (!form.validate()) return false;
-    console.log(user);
+    if (!form.validate()) return false;
+
+    $scope.isLoading = true;
 
     var url = urls.BASE_API + '/users/' + CookieService.read("nickname");
     var promise = HttpRequest.send("PUT", url, user);
@@ -62,4 +63,60 @@ function UserDataController($scope, $q, urls, CookieService, HttpRequest) {
       $scope.isLoading = false;
     });
   }
+
+  /* ----------------------------------- */
+  /* FORM VALIDATE */
+  /* ----------------------------------- */
+  $scope.validationOptions = {
+    debug: false,
+    rules: {
+      fullname: {
+        required: true
+      },
+      email: {
+        required: true,
+        regex: validators.email
+      },
+      phone: {
+        regex: validators.phone
+      },
+      dni: {
+        maxlength: 8,
+        minlength: 8,
+        regex: validators.integer
+      }
+    },
+    messages: {
+      fullname: {
+        required: 'Dato requerido'
+      },
+      email: {
+        required: 'Dato requerido',
+        regex: 'Email inválido'
+      },
+      phone: {
+        regex: 'Formato inválido'
+      },
+      dni: {
+        maxlength: 'Formato inválido',
+        minlength: 'Formato inválido',
+        regex: 'Formato inválido'
+      }
+    },
+    highlight: function (element) {
+      $(element).parents('div').addClass('error');
+      $(element).parents('form').addClass('error');
+      $(element).parent('div').addClass('error');
+      $(element).addClass('error');
+    },
+    unhighlight: function (element) {
+      $(element).parents('div').removeClass('error');
+      $(element).parents('form').removeClass('error');
+      $(element).parent('div').removeClass('error');
+      $(element).removeClass('error');
+    },
+    errorElement: "div",
+    errorClass:'error error-input',
+    validClass:'valid valid-input'
+  };
 }
