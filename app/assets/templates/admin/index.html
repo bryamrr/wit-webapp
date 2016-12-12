@@ -13,47 +13,23 @@
         </div>
       </div>
       <ul class="nav" id="side-menu" nav-collapse>
-        <li
-          data-ng-class="{open: $state.includes('catalog')}">
-          <a href="" toggle-submenu>
-            <span class="inner">
-              <ng-md-icon class="fa fa-th-large icono"></ng-md-icon>
-              <span class="nav-label">Catálogo</span>
-              <ng-md-icon class="fa fa-chevron-right arrow"></ng-md-icon>
-            </span>
-          </a>
-          <ul class="nav nav-second-level">
-            <li><a
-            ui-sref="catalog.marketing"
-            ui-sref-active="active"
-            >Marketing & Negocios</a></li>
-            <li><a
-            ui-sref="catalog.development"
-            ui-sref-active="active"
-            >Diseño & Programación</a></li>
-            <li><a
-            ui-sref="catalog.personal"
-            ui-sref-active="active"
-            >Idiomas & Des. Personal</a></li>
-          </ul>
-        </li>
         <li data-ng-class="{open: $state.includes('courses')}">
           <a href="">
             <span class="inner">
               <ng-md-icon class="fa fa-star icono"></ng-md-icon>
-              <span class="nav-label">Mis cursos</span>
+              <span class="nav-label">Cursos</span>
               <ng-md-icon class="fa fa-chevron-right arrow"></ng-md-icon>
             </span>
           </a>
           <ul class="nav nav-second-level">
             <li><a
-            ui-sref="courses.list"
+            ui-sref="courses.create"
             ui-sref-active="active"
-            >Cursos</a></li>
+            >Crear</a></li>
             <li><a
             ui-sref="courses.grades"
             ui-sref-active="active"
-            >Notas</a></li>
+            >Lista</a></li>
           </ul>
         </li>
         <li
@@ -165,5 +141,10 @@
   </header>
   <header-bread-crumb>
   </header-bread-crumb>
-  <main ui-view="content" class="animate-fade-left" id="contenido"></main>
+  <main class="content-view animate-fade-left" id="contenido">
+    <div class="loading-content loading-content-js">
+      <img src="/loading-content.svg" alt="" />
+    </div>
+    <div ui-view="content" class="wrapper-content"></div>
+  </main>
 </div>

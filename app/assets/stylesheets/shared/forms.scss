@@ -2,6 +2,7 @@
   height: 45px;
   margin-top: 30px;
   position: relative;
+  &.checkbox { height: 25px; }
 }
 
 .input {
@@ -98,3 +99,42 @@ input.input.input-has-value ~ label {
   .input { display: none; }
   .selectize-control { margin-top: 8px; }
 }
+
+/* CHECKBOX */
+.squaredCheck {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+}
+
+.squaredCheck  label {
+  background: $primary-color;
+  border-radius: 2px;
+  cursor: pointer;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 20px;
+}
+
+.squaredCheck label:after {
+  content: '';
+  background: transparent;
+  border: 3px solid $white;
+  border-right: none;
+  border-top: none;
+  height: 7px;
+  left: 4px;
+  opacity: 0;
+  position: absolute;
+  top: 5px;
+  transform: rotate(-45deg);
+  width: 12px;
+}
+
+.squaredCheck label:hover::after { opacity: 0.2; }
+
+input[type=checkbox] { visibility: hidden; }
+
+input[type=checkbox]:checked + label:after { opacity: 1; }

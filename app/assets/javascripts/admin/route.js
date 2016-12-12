@@ -30,6 +30,33 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
       }
     })
 
+    // Catalog
+    .state('courses', {
+      url: '/admin/cursos',
+      abstract: true,
+      data: {
+        'needAuth': true,
+        'title': 'Cursos'
+      },
+      views: {
+        dashboard: {
+          templateUrl: 'admin/index.html'
+        }
+      }
+    })
+    .state('courses.create', {
+      url: '/crear',
+      data: {
+        title: 'Crear Curso'
+      },
+      views: {
+        'content@courses': {
+          templateUrl: 'admin/courses/create.html',
+          controller: 'CreateCourseController'
+        }
+      }
+    })
+
 
   // default fall back route
   $urlRouterProvider.otherwise('/admin/inicio');
