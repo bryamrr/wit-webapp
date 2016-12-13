@@ -25,6 +25,8 @@ Rails.application.routes.draw do
       put 'users/:nickname/change_password', to: 'users#change_password'
 
       resources :provinces, only: [:index]
+      resources :categories, only: [:index]
+      resources :courses, except: [:new, :edit]
     end
   end
 end

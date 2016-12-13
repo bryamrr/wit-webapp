@@ -1,6 +1,6 @@
 <div class="card">
   <div class="full-container card card-padding">
-    <form name="form" ng-submit="createCourse(form, course)" ng-validate="validationOptions" novalidate>
+    <form name="form" ng-submit="updateCourse(form, course)" ng-validate="validationOptions" novalidate>
       <div class="form-input">
         <input class="input" type="text" id="title" name="title" ng-model="course.title" required />
         <div class="bar"></div>
@@ -70,7 +70,7 @@
       </div>
       <div class="form-input">
         <button type="submit" ng-disabled="form.$invalid || isLoading">
-          CREAR CURSO
+          EDITAR CURSO
           <div class="loader-wrapper" ng-show="isLoading">
             <div class="loader-circles" id="loader">Loading...</div>
           </div>

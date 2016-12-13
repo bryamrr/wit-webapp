@@ -20,6 +20,7 @@
  @import 'variables';
 
  @import 'vendors/angular-toastr';
+ @import 'vendors/sweet-alert';
 
  @import 'shared/variables';
  @import 'shared/breadcrumb';
@@ -30,3 +31,4 @@
  @import 'shared/forms';
  @import 'shared/loading';
  @import 'shared/modal';
+ @import 'shared/table';

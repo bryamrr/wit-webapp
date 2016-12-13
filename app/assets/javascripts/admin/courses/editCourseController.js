@@ -1,7 +1,7 @@
-angular.module('admin-app').controller('CreateCourseController', CreateCourseController);
+angular.module('admin-app').controller('EditCourseController', EditCourseController);
 
-CreateCourseController.$inject = ['$scope', '$state', 'urls', 'HttpRequest', 'toastr', 'validators'];
-function CreateCourseController($scope, $state, urls, HttpRequest, toastr, validators) {
+EditCourseController.$inject = ['$scope', '$state', '$stateParams', 'urls', 'HttpRequest', 'toastr', 'validators'];
+function EditCourseController($scope, $state, $stateParams, urls, HttpRequest, toastr, validators) {
 
   $scope.categoryConfig = {
     create: true,
@@ -19,12 +19,21 @@ function CreateCourseController($scope, $state, urls, HttpRequest, toastr, valid
     {id: 3, name:'Idiomas & Des. Personal'}
   ]
 
-  var $contenido = $('#contenido');
-  $contenido.addClass("loaded");
+  var url = urls.BASE_API + '/courses/' + $stateParams.id;
+  var promise = HttpRequest.send("GET", url);
 
-  $scope.createCourse = createCourse;
+  promise.then(function (response) {
+    $scope.course = response;
 
-  function createCourse(form, course) {
+    var $contenido = $('#contenido');
+    $contenido.addClass("loaded");
+  }, function(error){
+    toastr.error("Hubo un error");
+  });
+
+  $scope.updateCourse = updateCourse;
+
+  function updateCourse(form, course) {
     if (!form.validate()) return false;
 
     course.pricetag = parseFloat(course.pricetag);
@@ -32,10 +41,11 @@ function CreateCourseController($scope, $state, urls, HttpRequest, toastr, valid
 
     if (course.priority) course.priority = parseInt(course.priority);
 
-    var url = urls.BASE_API + '/courses';
-    var promise = HttpRequest.send("POST", url, course);
+    var url = urls.BASE_API + '/courses/' + $stateParams.id;
+    var promise = HttpRequest.send("PUT", url, course);
 
     promise.then(function (response) {
+      console.log(response);
       toastr.success(response.message);
       $state.go('courses.list');
     }, function(error){

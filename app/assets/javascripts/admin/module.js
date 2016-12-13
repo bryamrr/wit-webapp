@@ -3,4 +3,5 @@ angular.module("admin-app", [
   'templates',
   'ui.router',
   'ngMaterial',
-  'ngValidate'])
+  'ngValidate',
+  'oitozero.ngSweetAlert'])

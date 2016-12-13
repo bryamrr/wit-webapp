@@ -56,6 +56,30 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
+    .state('courses.list', {
+      url: '/lista',
+      data: {
+        title: 'Lista de Cursos'
+      },
+      views: {
+        'content@courses': {
+          templateUrl: 'admin/courses/list.html',
+          controller: 'CoursesListController'
+        }
+      }
+    })
+    .state('courses.edit', {
+      url: '/:id/editar',
+      data: {
+        title: 'Editar Curso'
+      },
+      views: {
+        'content@courses': {
+          templateUrl: 'admin/courses/edit.html',
+          controller: 'EditCourseController'
+        }
+      }
+    })
 
 
   // default fall back route
