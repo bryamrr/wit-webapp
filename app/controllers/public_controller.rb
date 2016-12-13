@@ -1,5 +1,6 @@
 class PublicController < ApplicationController
   def home
+    courses = Course.where(starred: true)
   end
 
   def money
