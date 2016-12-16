@@ -18,6 +18,18 @@ toastr.options = {
 
 $(document).on('turbolinks:load', function () {
 
+  // Click to scroll
+  $(".scroll-marketing").click(function() {
+    console.log("test");
+    $('html,body').animate({ scrollTop: $("#marketing-courses").offset().top}, 'slow');
+  });
+  $(".scroll-development").click(function() {
+    $('html,body').animate({ scrollTop: $("#development-courses").offset().top}, 'slow');
+  });
+  $(".scroll-personal").click(function() {
+    $('html,body').animate({ scrollTop: $("#personal-courses").offset().top}, 'slow');
+  });
+
   var token = checkCookie("token");
   var role = checkCookie("role");
   var location = window.location;
