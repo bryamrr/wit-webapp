@@ -37,34 +37,28 @@
           <a href="">
             <span class="inner">
               <ng-md-icon class="fa fa-user icono"></ng-md-icon>
-              <span class="nav-label">Datos</span>
+              <span class="nav-label">Usuarios</span>
               <ng-md-icon class="fa fa-chevron-right arrow"></ng-md-icon>
             </span>
           </a>
           <ul class="nav nav-second-level ">
             <li>
               <a
+              ui-sref="user.list"
+              ui-sref-active="active">
+              Lista</a>
+            </li>
+            <li>
+              <a
+              ui-sref="user.create"
+              ui-sref-active="active">
+              Crear</a>
+            </li>
+            <li>
+              <a
               ui-sref="user.data"
               ui-sref-active="active">
-              Datos Personales</a>
-            </li>
-            <li>
-              <a
-              ui-sref="user.bank"
-              ui-sref-active="active">
-              Datos Bancarios</a>
-            </li>
-            <li>
-              <a
-              ui-sref="user.password"
-              ui-sref-active="active">
-              Cambiar Contraseña</a>
-            </li>
-            <li>
-              <a
-              ui-sref="user.payments"
-              ui-sref-active="active">
-              Mis Pagos</a>
+              Mis datos</a>
             </li>
           </ul>
         </li>

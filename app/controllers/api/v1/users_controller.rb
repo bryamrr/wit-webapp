@@ -1,6 +1,14 @@
 class Api::V1::UsersController < Api::V1::BaseController
   skip_before_action :authenticate, :only => [:login]
 
+  def index
+    @users = User.all.order(created_at: :desc)
+
+    render :json => @users.to_json(:include => {
+      :province => {}
+      })
+  end
+
   # POST /api/v1/users/login
   def login
     data = {nickname: params[:nickname], password: params[:password]}
@@ -10,11 +18,7 @@ class Api::V1::UsersController < Api::V1::BaseController
       token = user.tokens.create
       render :json => { :token => token.token, :nickname => user.nickname, :role => user.role[:name], :first_entry => user.first_entry }
       if user.first_entry === false
-        puts "AQUI =======>"
         user.update_column(:first_entry, true)
-        puts user.errors.full_messages
-        puts user.to_json
-        puts user[:first_entry]
       end
     else
       render :json => { :errors => "Credenciales incorrectas" }, status: :unauthorized
@@ -33,6 +37,7 @@ class Api::V1::UsersController < Api::V1::BaseController
   end
 
   def create
+    puts params[:data].to_json
     user = User.new(user_params)
 
     if user.save
@@ -75,9 +80,6 @@ class Api::V1::UsersController < Api::V1::BaseController
 
   # PUT /api/v1/users/{nickname}
   def update
-    puts "AQUI =====>"
-    puts params.to_json
-    puts "AQUI =====>"
     user = User.find_by(nickname: params[:id])
 
     if user.update(update_params)
@@ -109,6 +111,7 @@ class Api::V1::UsersController < Api::V1::BaseController
 
   def user_params
     params.require(:data).permit(
+      :nickname,
       :fullname,
       :email,
       :phone,
@@ -117,7 +120,9 @@ class Api::V1::UsersController < Api::V1::BaseController
       :province_id,
       :gender,
       :password
-      )
+      ).merge(
+        role_id: 1
+        )
   end
 
 end

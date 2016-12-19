@@ -30,7 +30,7 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
       }
     })
 
-    // Catalog
+    // Courses
     .state('courses', {
       url: '/admin/cursos',
       abstract: true,
@@ -77,6 +77,57 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
         'content@courses': {
           templateUrl: 'admin/courses/edit.html',
           controller: 'EditCourseController'
+        }
+      }
+    })
+
+    // User
+    .state('user', {
+      url: '/admin/usuario',
+      abstract: true,
+      data: {
+        'needAuth': true,
+        'title': 'Usuario'
+      },
+      views: {
+        dashboard: {
+          templateUrl: 'admin/index.html'
+        }
+      }
+    })
+    .state('user.create', {
+      url: '/crear',
+      data: {
+        title: 'Crear Usuario'
+      },
+      views: {
+        'content@user': {
+          templateUrl: 'admin/user/create.html',
+          controller: 'CreateUserController'
+        }
+      }
+    })
+    .state('user.list', {
+      url: '/lista',
+      data: {
+        title: 'Lista de Usuarios'
+      },
+      views: {
+        'content@user': {
+          templateUrl: 'admin/user/list.html',
+          controller: 'UsersListController'
+        }
+      }
+    })
+    .state('user.data', {
+      url: '/datos',
+      data: {
+        title: 'Mis datos'
+      },
+      views: {
+        'content@user': {
+          templateUrl: 'admin/user/data.html',
+          controller: 'UserDataController'
         }
       }
     })
