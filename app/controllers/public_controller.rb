@@ -1,6 +1,6 @@
 class PublicController < ApplicationController
   def home
-    @courses = Course.where(starred: true).limit(9)
+    @courses = Course.where(starred: true).limit(9).order(priority: :asc)
   end
 
   def money

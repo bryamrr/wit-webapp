@@ -32,6 +32,17 @@ class Api::V1::UsersController < Api::V1::BaseController
     end
   end
 
+  def create
+    user = User.new(user_params)
+
+    if user.save
+      render :json => { :message => "Usuario creado" }
+    else
+      puts user.errors.to_json
+      render :json => { :message => "No se pudo crear el usuario" }, status: :bad_request
+    end
+  end
+
   # GET /api/v1/users/{nickname}
   def show
     user = User.find_by(nickname: params[:id])
@@ -77,6 +88,13 @@ class Api::V1::UsersController < Api::V1::BaseController
     end
   end
 
+  def destroy
+    user = User.find(params[:id])
+
+    user.destroy
+    render :json => { :message => "Usuario eliminado" }
+  end
+
   def update_params
     params.require(:data).permit(
       :fullname,
@@ -87,6 +105,19 @@ class Api::V1::UsersController < Api::V1::BaseController
       :province_id,
       :gender
     )
+  end
+
+  def user_params
+    params.require(:data).permit(
+      :fullname,
+      :email,
+      :phone,
+      :dni,
+      :address,
+      :province_id,
+      :gender,
+      :password
+      )
   end
 
 end

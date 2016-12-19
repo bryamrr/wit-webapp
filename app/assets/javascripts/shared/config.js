@@ -1,6 +1,6 @@
 angular
   .module('shared')
-  .config(function(toastrConfig) {
+  .config(function(toastrConfig, $animateProvider) {
     angular.extend(toastrConfig, {
       "closeButton": false,
       "debug": false,
@@ -18,4 +18,6 @@ angular
       "showMethod": "fadeIn",
       "hideMethod": "fadeOut"
     });
+
+    $animateProvider.classNameFilter(/animate/);
   });

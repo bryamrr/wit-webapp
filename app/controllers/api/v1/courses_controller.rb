@@ -42,7 +42,7 @@ class Api::V1::CoursesController < Api::V1::BaseController
     course = Course.find(params[:id])
 
     course.destroy
-    render :json => { :message => "Reporte eliminado" }
+    render :json => { :message => "Curso eliminado" }
   end
 
   private

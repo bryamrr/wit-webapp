@@ -42,6 +42,7 @@
     <div class="flex-container">
 
       <% @courses_starred.each do |course| %>
+      <%= link_to "Show", course %>
         <article class="course">
           <div class="professor-hover">
             <div class="professor-hover-content">
@@ -68,6 +69,7 @@
             </div>
           </div>
         </article>
+      <% end %>
       <% end %>
 
     </div>
