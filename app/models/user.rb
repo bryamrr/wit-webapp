@@ -56,7 +56,6 @@ class User < ApplicationRecord
   end
 
   def self.change(old_password, new_password, nickname)
-    puts "HEREEEEEEEE"
     user = User.find_by(nickname: nickname)
     if (user)
       encrypted_password = BCrypt::Engine.hash_secret(old_password, user[:salt])

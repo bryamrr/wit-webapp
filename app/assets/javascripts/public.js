@@ -183,6 +183,8 @@ $(document).on('turbolinks:load', function () {
 
         if (errorThrown === "Unauthorized") {
           toastr.error('El usuario no existe o las credenciales son incorrectas');
+        } else if (errorThrown === "Forbidden") {
+          toastr.error('Usuario bloqueado');
         }
       },
       contentType: 'application/json',

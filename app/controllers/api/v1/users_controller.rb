@@ -12,13 +12,18 @@ class Api::V1::UsersController < Api::V1::BaseController
   # POST /api/v1/users/login
   def login
     data = {nickname: params[:nickname], password: params[:password]}
+
     user = User.authenticate(data)
 
     if user
-      token = user.tokens.create
-      render :json => { :token => token.token, :nickname => user.nickname, :role => user.role[:name], :first_entry => user.first_entry }
-      if user.first_entry === false
-        user.update_column(:first_entry, true)
+      if user.block
+        render :json => { :errors => "Usuario bloqueado" }, status: :forbidden
+      else
+        token = user.tokens.create
+        render :json => { :token => token.token, :nickname => user.nickname, :role => user.role[:name], :first_entry => user.first_entry }
+        if user.first_entry === false
+          user.update_column(:first_entry, true)
+        end
       end
     else
       render :json => { :errors => "Credenciales incorrectas" }, status: :unauthorized
@@ -88,6 +93,21 @@ class Api::V1::UsersController < Api::V1::BaseController
       puts user.errors.to_json
       render :json => { :message => "No se pudo cambiar la contraseña" }, status: :bad_request
     end
+  end
+
+  def block
+    user = User.find(params[:id])
+
+    if user.block
+      user.update_column(:block, false)
+    else
+      user.update_column(:block, true)
+    end
+
+    puts user.errors.to_json
+    puts "HEEEEEEEERE"
+    puts user.to_json
+    render :json => { :message => "Usuario bloqueado" }
   end
 
   def destroy

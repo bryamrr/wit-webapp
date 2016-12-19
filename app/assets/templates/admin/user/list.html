@@ -5,17 +5,17 @@
         <tr>
           <th class="thin-column">Usuario</th>
           <th class="text-left">Nombre Completo</th>
-          <th colspan="4">Administrar</th>
+          <th class="text-left">Estado</th>
+          <th colspan="1">Administrar</th>
         </tr>
       </thead>
       <tbody>
         <tr ng-repeat="user in users">
           <td class="text-left">{{ user.nickname }}</td>
           <td class="text-left">{{ user.fullname }}</td>
-          <td class="no-padding">
-            <a ui-sref="user.edit({id: user.id})" class="btn button-ico">
-              <span class="helper"></span><i class="fa fa-edit display-inline font-1-3em"></i>
-            </a>
+          <td class="text-left">
+            <span ng-if="user.block === true">Bloqueado</span>
+            <span ng-if="user.block === false">Activo</span>
           </td>
           <td class=" no-padding">
             <a href="javascript:void(0)" ng-click="userBlock(user.id, $event)" class="btn button-ico">
