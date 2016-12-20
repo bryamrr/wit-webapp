@@ -1,6 +1,6 @@
 angular
   .module('shared')
-  .config(function(toastrConfig, $animateProvider) {
+  .config(['toastrConfig', '$animateProvider', function(toastrConfig, $animateProvider) {
     angular.extend(toastrConfig, {
       "closeButton": false,
       "debug": false,
@@ -20,4 +20,4 @@ angular
     });
 
     $animateProvider.classNameFilter(/animate/);
-  });
+  }]);
