@@ -1,6 +1,6 @@
 <div class="card">
   <div class="full-container card card-padding">
-    <form name="form" ng-submit="create(form, topic)" ng-validate="validationOptions" novalidate>
+    <form name="form" ng-submit="update(form, topic)" ng-validate="validationOptions" novalidate>
       <div class="form-input">
         <input class="input" type="text" id="title" name="title" ng-model="topic.title" required />
         <div class="bar"></div>
@@ -19,7 +19,7 @@
         </div>
         <div class="form-input">
           <button type="submit" ng-disabled="form.$invalid || isLoading">
-            Agregar Tema
+            Actualizar Tema
             <div class="loader-wrapper" ng-show="isLoading">
               <div class="loader-circles" id="loader">Loading...</div>
             </div>
@@ -27,30 +27,5 @@
         </div>
       </div>
     </form>
-    <table class="table td-bg">
-      <thead>
-        <tr>
-          <th class="thin-column">Número</th>
-          <th class="text-left">Nombre</th>
-          <th colspan="2">Administrar</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="topic in topics">
-          <td class="text-left thin-column">{{ topic.number }}</td>
-          <td class="text-left">{{ topic.title }}</td>
-          <td class=" no-padding">
-            <a href="javascript:void(0)" ui-sref="courses.topicedit({id: topic.id})" class="btn button-ico">
-              <span class="helper"></span><i class="fa fa-edit display-inline font-1em"></i>
-            </a>
-          </td>
-          <td class=" no-padding">
-            <a href="javascript:void(0)" ng-click="topicDelete(topic.id, $event)" class="btn button-ico">
-              <span class="helper"></span><i class="fa fa-times display-inline font-1em"></i>
-            </a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 </div>

@@ -104,6 +104,18 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
+    .state('courses.topicedit', {
+      url: '/:id/tema/editar',
+      data: {
+        title: 'Editar Tema'
+      },
+      views: {
+        'content@courses': {
+          templateUrl: 'admin/courses/topicedit.html',
+          controller: 'TopicEditController'
+        }
+      }
+    })
     .state('courses.quiz', {
       url: '/:id/quiz',
       data: {

@@ -35,8 +35,7 @@ Rails.application.routes.draw do
       get 'parts/:id/topics', to: 'parts#topics'
       get 'parts/:id/quiz', to: 'parts#quiz'
 
-      resources :topics, only: [:destroy, :create]
-      resources :quizzes, only: [:destroy, :create, :edit]
+      resources :topics, only: [:show, :destroy, :create, :update]
     end
   end
 end
