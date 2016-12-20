@@ -12,7 +12,9 @@ function ModulesController($scope, $state, $stateParams, urls, HttpRequest, toas
   var promise = HttpRequest.send("GET", url);
 
   promise.then(function (response) {
-    $scope.modules = response;
+    $scope.modules = response.parts;
+    $scope.course = response.course.title;
+
     var $contenido = $('#contenido');
     $contenido.addClass("loaded");
   }, function(error){

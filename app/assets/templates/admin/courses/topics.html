@@ -1,5 +1,6 @@
 <div class="card">
   <div class="full-container card card-padding">
+    <h2>Temario - {{module}} - {{course}}</h2>
     <form name="form" ng-submit="create(form, topic)" ng-validate="validationOptions" novalidate>
       <div class="form-input">
         <input class="input" type="text" id="title" name="title" ng-model="topic.title" required />

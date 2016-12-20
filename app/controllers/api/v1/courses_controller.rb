@@ -46,8 +46,9 @@ class Api::V1::CoursesController < Api::V1::BaseController
 
   def modules
     parts = Part.where(course_id: params[:id]).order(number: :asc)
+    course = Course.find(params[:id])
 
-    render :json => parts
+    render :json => { :parts => parts, :course => course }
   end
 
   private

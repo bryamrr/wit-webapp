@@ -25,7 +25,10 @@ class Api::V1::PartsController < Api::V1::BaseController
 
   def topics
     topics = Topic.where(part_id: params[:id]).order(number: :asc)
-    render :json => topics
+    part = Part.find(params[:id])
+    course = Course.find(part[:course_id])
+
+    render :json => { :topics => topics, :part => part, :course => course }
   end
 
   def part_params
