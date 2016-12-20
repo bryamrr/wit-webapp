@@ -6,7 +6,7 @@ class CreateCourses < ActiveRecord::Migration[5.0]
       t.text :description
       t.text :goal
       t.boolean :starred
-      t.boolean :pricetag
+      t.decimal :pricetag
       t.string :duration
       t.string :background_url
       t.string :video_url
