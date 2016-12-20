@@ -27,7 +27,16 @@ Rails.application.routes.draw do
 
       resources :provinces, only: [:index]
       resources :categories, only: [:index]
+
       resources :courses, except: [:new, :edit]
+      get 'courses/:id/modules', to: 'courses#modules'
+
+      resources :parts, only: [:show, :destroy, :create]
+      get 'parts/:id/topics', to: 'parts#topics'
+      get 'parts/:id/quiz', to: 'parts#quiz'
+
+      resources :topics, only: [:destroy, :create]
+      resources :quizzes, only: [:destroy, :create, :edit]
     end
   end
 end

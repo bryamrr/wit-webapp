@@ -138,3 +138,15 @@ input.input.input-has-value ~ label {
 input[type=checkbox] { visibility: hidden; }
 
 input[type=checkbox]:checked + label:after { opacity: 1; }
+
+.add-element-priority {
+  display: flex;
+  margin-bottom: 2em;
+  .form-input {
+    padding-right: 2em;
+    &:last-child { padding-right: 0;}
+    &:nth-child(1) { width: 65%; }
+    &:nth-child(2) { width: 10%; }
+    &:nth-child(3) { width: 25%; }
+  }
+}

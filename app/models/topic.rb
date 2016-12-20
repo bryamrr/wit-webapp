@@ -1,3 +1,3 @@
 class Topic < ApplicationRecord
-  belongs_to :CModule
+  belongs_to :part
 end

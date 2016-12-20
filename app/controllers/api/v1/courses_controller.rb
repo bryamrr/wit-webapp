@@ -21,7 +21,6 @@ class Api::V1::CoursesController < Api::V1::BaseController
     if course.save
       render :json => { :message => "Curso creado" }
     else
-      puts course.errors.to_json
       render :json => { :message => "No se pudo crear el curso" }, status: :bad_request
     end
   end
@@ -43,6 +42,12 @@ class Api::V1::CoursesController < Api::V1::BaseController
 
     course.destroy
     render :json => { :message => "Curso eliminado" }
+  end
+
+  def modules
+    parts = Part.where(course_id: params[:id]).order(number: :asc)
+
+    render :json => parts
   end
 
   private
