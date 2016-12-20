@@ -1,7 +1,7 @@
 class Api::V1::PartsController < Api::V1::BaseController
   def show
-    parts = Part.find(params[:id])
-    render :json => parts.to_json(:include => {
+    part = Part.find(params[:id])
+    render :json => part.to_json(:include => {
       :topics => {}
       })
   end
