@@ -51,6 +51,18 @@ class Api::V1::CoursesController < Api::V1::BaseController
     render :json => { :parts => parts, :course => course }
   end
 
+  def change_state
+    course = Course.find(params[:id])
+
+    if course.published
+      course.update_column(:published, false)
+    else
+      course.update_column(:published, true)
+    end
+
+    render :json => { :message => "Curso actualizado" }
+  end
+
   private
   def course_params
     params.require(:data).permit(
@@ -58,6 +70,7 @@ class Api::V1::CoursesController < Api::V1::BaseController
       :title,
       :description,
       :goal,
+      :certificate_info,
       :starred,
       :free,
       :pricetag,

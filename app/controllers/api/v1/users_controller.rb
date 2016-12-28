@@ -104,9 +104,6 @@ class Api::V1::UsersController < Api::V1::BaseController
       user.update_column(:block, true)
     end
 
-    puts user.errors.to_json
-    puts "HEEEEEEEERE"
-    puts user.to_json
     render :json => { :message => "Usuario bloqueado" }
   end
 

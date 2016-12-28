@@ -58,6 +58,9 @@ function CreateCourseController($scope, $state, urls, HttpRequest, toastr, valid
       goal: {
         required: true
       },
+      certificate: {
+        required: true
+      },
       pricetag: {
         required: true,
         regex: validators.decimal
@@ -86,6 +89,9 @@ function CreateCourseController($scope, $state, urls, HttpRequest, toastr, valid
         required: 'Dato requerido'
       },
       goal: {
+        required: 'Dato requerido'
+      },
+      certificate: {
         required: 'Dato requerido'
       },
       pricetag: {
