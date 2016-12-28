@@ -5,6 +5,6 @@ class Course < ApplicationRecord
 
   private
   def default_values
-    self.published = false
+    self.published ||= false
   end
 end

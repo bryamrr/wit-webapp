@@ -23,16 +23,16 @@ class User < ApplicationRecord
 
   private
   def default_values
-    self.first_entry = false
-    self.balance = 0
-    self.historical_balance = 0
-    self.preferencial = false
-    self.ambassador = false
-    self.ambassador_active = false
-    self.ambassador_start = false
-    self.login_attempts = 0
-    self.block = false
-    self.paydate_expire = false
+    self.first_entry ||= false
+    self.balance ||= 0
+    self.historical_balance ||= 0
+    self.preferencial ||= false
+    self.ambassador ||= false
+    self.ambassador_active ||= false
+    self.ambassador_start ||= false
+    self.login_attempts ||= 0
+    self.block ||= false
+    self.paydate_expire ||= false
   end
 
   private

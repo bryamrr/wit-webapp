@@ -51,8 +51,17 @@
               <i class="fa fa-clock-o" aria-hidden="true"></i>
               <span><%= course.duration %></span>
             </div>
+            <div class="discount">
+              <% if (course.discount != 0) && course.discount %>
+                <span>S/. <%= course.discount %></span>
+              <% end %>
+            </div>
             <div class="course-price">
-              S/. <%= course.pricetag %>
+              <% if course.free %>
+                <span>Gratis</span>
+              <% else %>
+                <span>S/. <%= course.pricetag %></span>
+              <% end %>
             </div>
           </div>
         </article>
