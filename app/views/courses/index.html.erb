@@ -43,6 +43,7 @@
 
       <% @courses_starred.each do |course| %>
         <article class="course">
+          <%= link_to course_path(course) do %>
           <div class="professor-hover">
             <div class="professor-hover-content">
               <figure>
@@ -76,6 +77,7 @@
               <% end %>
             </div>
           </div>
+          <% end %>
         </article>
       <% end %>
 
@@ -93,6 +95,7 @@
 
       <% @courses_marketing.each do |course| %>
         <article class="course">
+          <%= link_to course_path(course) do %>
           <div class="professor-hover">
             <div class="professor-hover-content">
               <figure>
@@ -126,6 +129,7 @@
               <% end %>
             </div>
           </div>
+          <% end %>
         </article>
       <% end %>
 
@@ -143,6 +147,7 @@
 
       <% @courses_development.each do |course| %>
         <article class="course">
+          <%= link_to course_path(course) do %>
           <div class="professor-hover">
             <div class="professor-hover-content">
               <figure>
@@ -176,6 +181,7 @@
               <% end %>
             </div>
           </div>
+          <% end %>
         </article>
       <% end %>
 
@@ -193,6 +199,7 @@
 
       <% @courses_personal.each do |course| %>
         <article class="course">
+          <%= link_to course_path(course) do %>
           <div class="professor-hover">
             <div class="professor-hover-content">
               <figure>
@@ -226,6 +233,7 @@
               <% end %>
             </div>
           </div>
+          <% end %>
         </article>
       <% end %>
 

@@ -1,7 +1,7 @@
 <% content_for :body_class, 'courses-show' %>
 <section class="main-course">
   <div class="main-info">
-    <h1>Título del curso a presentar en esta sección o cuadro</h1><!--
+    <h1><%= @course.title %></h1><!--
     --><div class="sales">
       <p>Puedes acceder a este curso con tarjeta (crédito o débito) y depósito (agente BCP)</p>
       <button>¡Quiero este curso!</button>
@@ -21,7 +21,7 @@
         </li>
         <li>
           <i class="fa fa-clock-o"></i>
-          <span>2h 30min</span>
+          <span><%= @course.duration %></span>
         </li>
         <li>
           <i class="fa fa-circle"></i>
@@ -41,88 +41,35 @@
 
   <div class="info-section">
     <h5>Descripción del curso</h5>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p><%= @course.description %></p>
   </div>
 
   <div class="info-section">
     <h5>¿Qué vas a lograr con este curso?</h5>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p><%= @course.goal %></p>
   </div>
 
   <div class="info-section">
-    <h5>Programa del curso</h5>
-    <h6>MÓDULO 1: Introducción</h6>
-    <ul>
-      <li>
-        <i class="fa fa-lock"></i>
-        <span>Clase 1: Introducción al curso</span>
-        <em>05min</em>
-      </li>
-      <li>
-        <i class="fa fa-lock"></i>
-        <span>Clase 1: Introducción al curso</span>
-        <em>05min</em>
-      </li>
-      <li>
-        <i class="fa fa-lock"></i>
-        <span>Clase 1: Introducción al curso</span>
-        <em>05min</em>
-      </li>
-      <li>
-        <i class="fa fa-lock"></i>
-        <span>Clase 1: Introducción al curso</span>
-        <em>05min</em>
-      </li>
-      <li>
-        <i class="fa fa-lock"></i>
-        <span>Clase 1: Introducción al curso</span>
-        <em>05min</em>
-      </li>
-      <li>
-        <i class="fa fa-lock"></i>
-        <span>Clase 1: Introducción al curso</span>
-        <em>05min</em>
-      </li>
-    </ul>
 
-    <h6>MÓDULO 2: Introducción</h6>
+    <h5>Programa del curso</h5>
+
+    <% @course.parts.order(number: :asc).each do |part| %>
+    <h6>MÓDULO <%= part.number %>: <%= part.title %></h6>
     <ul>
+      <% part.topics.order(number: :asc).each do |topic| %>
       <li>
         <i class="fa fa-lock"></i>
-        <span>Clase 1: Introducción al curso</span>
+        <span><%= part.title %></span>
         <em>05min</em>
       </li>
-      <li>
-        <i class="fa fa-lock"></i>
-        <span>Clase 1: Introducción al curso</span>
-        <em>05min</em>
-      </li>
-      <li>
-        <i class="fa fa-lock"></i>
-        <span>Clase 1: Introducción al curso</span>
-        <em>05min</em>
-      </li>
-      <li>
-        <i class="fa fa-lock"></i>
-        <span>Clase 1: Introducción al curso</span>
-        <em>05min</em>
-      </li>
-      <li>
-        <i class="fa fa-lock"></i>
-        <span>Clase 1: Introducción al curso</span>
-        <em>05min</em>
-      </li>
-      <li>
-        <i class="fa fa-lock"></i>
-        <span>Clase 1: Introducción al curso</span>
-        <em>05min</em>
-      </li>
+      <% end %>
     </ul>
+    <% end %>
   </div>
 
   <div class="info-section">
     <h5>Certificado</h5>
-    <p>Obtendrás un certificado a nombre de Wit University al concluir satisfactoriamente el curso. El certificado se enviará en formato PDF, y es gratuito.</p>
+    <p><%= @course.certificate_info %></p>
   </div>
 
   <div class="info-section">

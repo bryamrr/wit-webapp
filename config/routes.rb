@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get "/bienvenido", to: "public#welcome"
 
   get "/cursos", to: "courses#index"
-  get "/cursos/:id", to: "courses#show"
+  get "/cursos/:id", to: "courses#show", as: 'course'
 
   post "/registro", to: "users#create"
 
