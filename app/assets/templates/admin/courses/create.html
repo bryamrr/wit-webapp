@@ -27,6 +27,18 @@
         <div class="bar"></div>
         <label class="label basic" for="certificate">Certificado</label>
       </div>
+      <div class="two-cols-form">
+        <div class="form-input">
+          <input class="input" type="text" id="level" name="level" ng-model="course.level" required />
+          <div class="bar"></div>
+          <label class="label basic" for="level">Nivel</label>
+        </div>
+        <div class="form-input">
+          <input class="input" type="text" id="classes" name="classes" ng-model="course.classes" required />
+          <div class="bar"></div>
+          <label class="label basic" for="classes">Nº de Clases</label>
+        </div>
+      </div>
       <div class="form-input checkbox">
         <div class="squaredCheck">
           <input type="checkbox" value="None" id="starred" name="starred" ng-model="course.starred" />

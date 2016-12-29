@@ -78,7 +78,9 @@ class Api::V1::CoursesController < Api::V1::BaseController
       :duration,
       :background_url,
       :video_url,
-      :priority
+      :priority,
+      :level,
+      :classes
     )
   end
 end

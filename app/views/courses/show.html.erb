@@ -17,7 +17,7 @@
       <ul>
         <li>
           <i class="fa fa-play-circle-o"></i>
-          <span>16 clases</span>
+          <span><%= @course.classes %> clases</span>
         </li>
         <li>
           <i class="fa fa-clock-o"></i>
@@ -25,7 +25,7 @@
         </li>
         <li>
           <i class="fa fa-circle"></i>
-          <span>Nivel: Básico</span>
+          <span>Nivel: <%= @course.level %></span>
         </li>
       </ul>
       <h4>Profesor</h4>

@@ -71,6 +71,12 @@ function EditCourseController($scope, $state, $stateParams, urls, HttpRequest, t
       certificate: {
         required: true
       },
+      level: {
+        required: true
+      },
+      classes: {
+        required: true
+      },
       pricetag: {
         required: true,
         regex: validators.decimal
@@ -102,6 +108,12 @@ function EditCourseController($scope, $state, $stateParams, urls, HttpRequest, t
         required: 'Dato requerido'
       },
       certificate: {
+        required: 'Dato requerido'
+      },
+      level: {
+        required: 'Dato requerido'
+      },
+      classes: {
         required: 'Dato requerido'
       },
       pricetag: {
