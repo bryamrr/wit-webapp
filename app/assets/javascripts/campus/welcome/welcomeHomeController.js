@@ -3,11 +3,11 @@ angular.module("campus-app").controller("WelcomeHomeController", WelcomeHomeCont
 WelcomeHomeController.$inject = ['$scope', 'urls', 'CookieService', 'HttpRequest'];
 
 function WelcomeHomeController($scope, urls, CookieService, HttpRequest) {
-  var url = urls.BASE_API + '/users/' + CookieService.read("nickname");
+  var url = urls.BASE_API + '/courses';
   var promise = HttpRequest.send("GET", url);
 
   promise.then(function (response) {
-    $scope.user = response;
+    $scope.courses = response;
     var $contenido = $('#contenido');
     $contenido.addClass("loaded");
   }, function(error){
