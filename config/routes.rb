@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get "/login", to: "public#login"
   get "/registro", to: "public#register"
   get "/bienvenido", to: "public#welcome"
+  get "/instructores", to: "public#instructor"
 
   get "/cursos", to: "courses#index"
   get "/cursos/:id", to: "courses#show", as: 'course'

@@ -27,6 +27,13 @@
           <i class="fa fa-circle"></i>
           <span>Nivel: <%= @course.level %></span>
         </li>
+        <li>
+          <i class="fa fa-download"></i>
+          <span>0 archivos adjuntos</span>
+        </li>
+        <li>
+          <span class="tiny-text">Publicado el <%= @course.created_at.to_time.strftime("%m/%d/%Y") %></span>
+        </li>
       </ul>
       <h4>Profesor</h4>
       <%= image_tag("logo-white.png") %><h5>Nombre Completo</h5>

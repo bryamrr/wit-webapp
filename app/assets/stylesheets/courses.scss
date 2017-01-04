@@ -110,7 +110,10 @@
       padding: 1em 0 2em;
       margin: 0;
     }
-    li { list-style-type: none; }
+    li {
+      list-style-type: none;
+      margin-bottom: .3em;
+    }
 
     img { width: 60px; }
 

@@ -9,6 +9,9 @@ class PublicController < ApplicationController
   def certificates
   end
 
+  def instructor
+  end
+
   def register
   end
 

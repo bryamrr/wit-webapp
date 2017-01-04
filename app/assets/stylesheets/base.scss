@@ -72,7 +72,7 @@ header {
 }
 
 .logo {
-  margin-right: 2.5em;
+  margin-right: 1.5em;
   height: 30px;
   img {
     height: 100%;
@@ -87,7 +87,7 @@ nav {
   }
   li {
     display: inline-block;
-    margin-right: 2em;
+    margin-right: 1em;
     a {
       color: white;
       transition: color .2s linear;
@@ -143,8 +143,8 @@ footer {
   border-right: 1px solid white;
   box-sizing: border-box;
   color: white;
-  margin-right: 5.33%;
-  flex-basis: 21%;
+  margin-right: 4%;
+  flex-basis: 22%;
   &:nth-child(4n) {
     border-right: none;
     margin-right: 0;
@@ -404,3 +404,8 @@ label.error {
   text-align: center;
   z-index: 1;
 }
+
+@media screen and (max-width: 1240px) {
+  .hide-in-mobile { display: none; }
+}
+.tiny-text { font-size: .9em; }
