@@ -69,6 +69,7 @@
 
 .plans {
   background-color: $turquose;
+  overflow: hidden;
   padding: 5em 0;
   text-align: center;
 
@@ -79,11 +80,12 @@
 }
 
 .plan {
-  background-color: white;
-  border: 2px solid $purple;
+  border: 3px solid $purple;
+  border-radius: 10px;
   margin: 0 auto;
+  padding: 1em;
   position: relative;
-  width: 400px;
+  width: 200px;
 
   .medalla {
     position: absolute;
@@ -92,22 +94,18 @@
     width: 150px;
   }
 
-  a {
-    color: black;
-    text-decoration: underline;
-    &:hover { text-decoration: none; }
+  .price {
+    color: $purple;
+    margin-top: .3em;
   }
-}
-
-.plan-header {
-  background-color: $purple;
-  color: white;
-  font-size: 2em;
-  padding: 2em 0 1.6em;
-  .price { margin-top: .3em; }
-  .price-int { font-size: 2em; }
+  .price-currency { font-size: 2em; }
+  .price-int {
+    font-size: 3.5em;
+    line-height: .8em;
+  }
   .aside-price {
     display: inline-block;
+    vertical-align: top;
   }
   .price-decimal, .price-text {
     display: block;
@@ -118,28 +116,46 @@
   .price-text {
     font-size: .5em;
   }
+
+  a {
+    color: black;
+    text-decoration: underline;
+    &:hover { text-decoration: none; }
+  }
+  h4 {
+    font-size: 1.5em;
+    font-weight: normal;
+  }
 }
 
-.plan-body {
-  padding: 2em 1.5em 1.8em;
-  ul {
-    padding: 0;
-    margin: 0 0 2em;
-    text-align: left;
-  }
-  li {
-    color: $gray;
-    list-style-type: none;
-    margin-bottom: 1em;
-  }
-  i {
-    color: $purple;
-    margin-right: 1em;
-  }
-  span {
+.advantages {
+  margin: 3em auto;
+  max-width: 700px;
+  padding: 0;
+  text-align: left;
+  img, .advantage {
     display: inline-block;
     vertical-align: top;
-    width: calc(100% - 37px);
+  }
+  img {
+    height: 60px;
+    margin-right: 1em;
+  }
+  li {
+    list-style-type: none;
+    overflow: hidden;
+  }
+  h5 {
+    margin-bottom: 0;
+  }
+  p {
+    font-size: .95em;
+    margin-top: 0;
+  }
+  .advantage {
+    float: right;
+    margin-bottom: 1.5em;
+    width: calc(100% - 90px);
   }
 }
 
