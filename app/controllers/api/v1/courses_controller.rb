@@ -33,7 +33,7 @@ class Api::V1::CoursesController < Api::V1::BaseController
       render :json => { :message => "Datos actualizados" }
     else
       puts course.errors.to_json
-      render :json => { :message => "No se pudo cambiar la contraseña" }, status: :bad_request
+      render :json => { :message => "No se pudo actualizar" }, status: :bad_request
     end
   end
 

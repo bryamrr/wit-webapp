@@ -27,7 +27,7 @@ Rails.application.routes.draw do
       put 'users/:id/block', to: 'users#block'
 
       resources :provinces, only: [:index]
-      resources :categories, only: [:index]
+      resources :categories, except: [:new, :edit, :show]
 
       resources :courses, except: [:new, :edit]
       get 'courses/:id/modules', to: 'courses#modules'

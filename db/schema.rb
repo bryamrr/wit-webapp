@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161229213921) do
+ActiveRecord::Schema.define(version: 20170105175535) do
 
   create_table "alternatives", force: :cascade do |t|
     t.integer  "question_id"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20161229213921) do
     t.string   "logo_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "slug"
   end
 
   create_table "countries", force: :cascade do |t|

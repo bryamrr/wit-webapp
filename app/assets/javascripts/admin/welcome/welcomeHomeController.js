@@ -3,5 +3,6 @@ angular.module("admin-app").controller("WelcomeHomeController", WelcomeHomeContr
 WelcomeHomeController.$inject = ['$scope'];
 
 function WelcomeHomeController($scope) {
-  console.log("WelcomeHomeController");
+  var $contenido = $('#contenido');
+  $contenido.addClass("loaded");
 }
