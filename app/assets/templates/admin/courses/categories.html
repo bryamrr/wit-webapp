@@ -1,1 +1,30 @@
-Categorías
+<div class="card">
+  <div class="full-container card card-padding">
+    <h2>Lista de categorías</h2>
+    <table class="table td-bg">
+      <thead>
+        <tr>
+          <th class="thin-column">Nombre</th>
+          <th class="text-left">Slug</th>
+          <th colspan="2">Administrar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="category in categories">
+          <td class="text-left">{{ category.name }}</td>
+          <td class="text-left">{{ category.slug }}</td>
+          <td class="no-padding">
+            <a ui-sref="course.categoryedit({id: category.id})" class="btn button-ico">
+              <span class="helper"></span><i class="fa fa-edit display-inline font-1-3em"></i>
+            </a>
+          </td>
+          <td class=" no-padding">
+            <a href="javascript:void(0)" ng-click="categoryDelete(category.id, $event)" class="btn button-ico">
+              <span class="helper"></span><i class="fa fa-times display-inline font-1em"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
