@@ -13,14 +13,17 @@ function CreateCourseController($scope, $state, urls, HttpRequest, toastr, valid
     },
   };
 
-  $scope.categories = [
-    {id: 1, name: 'Marketing & Negocios'},
-    {id: 2, name:'Diseño & Programación'},
-    {id: 3, name:'Idiomas & Des. Personal'}
-  ]
+  var url = urls.BASE_API + '/categories';
+  var promise = HttpRequest.send("GET", url);
 
-  var $contenido = $('#contenido');
-  $contenido.addClass("loaded");
+  promise.then(function (response) {
+    $scope.categories = response;
+
+    var $contenido = $('#contenido');
+    $contenido.addClass("loaded");
+  }, function(error){
+    toastr.error("Hubo un error");
+  });
 
   $scope.createCourse = createCourse;
 

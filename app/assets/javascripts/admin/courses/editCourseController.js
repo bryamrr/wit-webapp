@@ -1,7 +1,7 @@
 angular.module('admin-app').controller('EditCourseController', EditCourseController);
 
-EditCourseController.$inject = ['$scope', '$state', '$stateParams', 'urls', 'HttpRequest', 'toastr', 'validators'];
-function EditCourseController($scope, $state, $stateParams, urls, HttpRequest, toastr, validators) {
+EditCourseController.$inject = ['$scope', '$q', '$state', '$stateParams', 'urls', 'HttpRequest', 'toastr', 'validators'];
+function EditCourseController($scope, $q, $state, $stateParams, urls, HttpRequest, toastr, validators) {
 
   $scope.categoryConfig = {
     create: true,
@@ -13,17 +13,18 @@ function EditCourseController($scope, $state, $stateParams, urls, HttpRequest, t
     },
   };
 
-  $scope.categories = [
-    {id: 1, name: 'Marketing & Negocios'},
-    {id: 2, name:'Diseño & Programación'},
-    {id: 3, name:'Idiomas & Des. Personal'}
-  ]
-
   var url = urls.BASE_API + '/courses/' + $stateParams.id;
   var promise = HttpRequest.send("GET", url);
 
-  promise.then(function (response) {
-    $scope.course = response;
+  var urlCategories = urls.BASE_API + '/categories';
+  var promiseCategories = HttpRequest.send("GET", urlCategories);
+
+  var allPromises = $q.all([promise, promiseCategories]);
+
+  allPromises.then(function (response) {
+    console.log(response);
+    $scope.course = response[0];
+    $scope.categories = response[1];
 
     var $contenido = $('#contenido');
     $contenido.addClass("loaded");
