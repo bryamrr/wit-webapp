@@ -140,6 +140,18 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
+    .state('courses.categoryedit', {
+      url: '/categorias/:id',
+      data: {
+        title: 'Editar Categría'
+      },
+      views: {
+        'content@courses': {
+          templateUrl: 'admin/courses/category-edit.html',
+          controller: 'CategoryEditController'
+        }
+      }
+    })
 
     // User
     .state('user', {

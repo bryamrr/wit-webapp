@@ -6,7 +6,7 @@
     .module('shared')
     .constant('urls', {
       BASE: 'http://localhost:3000 http://wituniversity-staging.herokuapp.com http://wituniversity.herokuapp.com',
-      BASE_API: 'http://localhost:3000/api/v1'
+      BASE_API: 'http://wituniversity-staging.herokuapp.com/api/v1'
     })
     .constant('toast',{
       DELAY: 5500

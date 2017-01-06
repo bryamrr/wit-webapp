@@ -19,3 +19,13 @@
   max-width: 990px;
   margin: 0 auto;
 }
+
+.two-column-create {
+  display: flex;
+  margin-bottom: 2em;
+  .form-input {
+    flex-grow: 1;
+    margin-right: 2em;
+    &:last-child { margin-right: 0; }
+  }
+}
