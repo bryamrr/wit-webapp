@@ -44,34 +44,10 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-    .state('catalog.marketing', {
-      url: '/marketing-negocios',
+    .state('catalog.categories', {
+      url: '/categorias/:slug',
       data: {
-        title: 'Marketing & Negocios'
-      },
-      views: {
-        'content@catalog': {
-          templateUrl: 'campus/catalog/index.html',
-          controller: 'CatalogController'
-        }
-      }
-    })
-    .state('catalog.development', {
-      url: '/diseno-desarrollo',
-      data: {
-        title: 'Diseño & Programación'
-      },
-      views: {
-        'content@catalog': {
-          templateUrl: 'campus/catalog/index.html',
-          controller: 'CatalogController'
-        }
-      }
-    })
-    .state('catalog.personal', {
-      url: '/idiomas-des-personal',
-      data: {
-        title: 'Idiomas & Des. Personal'
+        title: 'Lista'
       },
       views: {
         'content@catalog': {

@@ -26,13 +26,14 @@ function CategoriesController($scope, $state, urls, HttpRequest, toastr, SweetAl
 
     promise.then(function (response) {
       toastr.success(response.message);
-      $scope.categories.push(category);
+      $scope.categories.push(response.category);
     }, function(error){
       toastr.error("Hubo un error");
     });
   }
 
   function categoryDelete(id, $event){
+    console.log(id);
     SweetAlert.swal({
       title: "Estás seguro?",
       text: "Esta acción es irreversible!",

@@ -13,7 +13,7 @@ class Api::V1::CategoriesController < Api::V1::BaseController
     category = Category.new(category_params)
 
     if category.save
-      render :json => { :message => "Categoría creada" }
+      render :json => { :category => category, :message => "Categoría creada" }
     else
       render :json => { :message => "No se pudo crear la categoría" }, status: :bad_request
     end

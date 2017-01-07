@@ -15,11 +15,18 @@ class Api::V1::CoursesController < Api::V1::BaseController
     render :json => @course
   end
 
+  def find_by_slug
+    category = Category.find_by(slug: params[:slug])
+    courses = category.courses
+
+    render :json => { :courses => courses, :category => category }
+  end
+
   def create
     course = Course.new(course_params)
 
     if course.save
-      render :json => { :message => "Curso creado" }
+      render :json => { :course => course, :message => "Curso creado" }
     else
       render :json => { :message => "No se pudo crear el curso" }, status: :bad_request
     end

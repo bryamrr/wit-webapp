@@ -24,17 +24,10 @@
           </a>
           <ul class="nav nav-second-level">
             <li><a
-            ui-sref="catalog.marketing"
+            ui-sref="catalog.categories({ slug: category.slug })"
             ui-sref-active="active"
-            >Marketing & Negocios</a></li>
-            <li><a
-            ui-sref="catalog.development"
-            ui-sref-active="active"
-            >Diseño & Programación</a></li>
-            <li><a
-            ui-sref="catalog.personal"
-            ui-sref-active="active"
-            >Idiomas & Des. Personal</a></li>
+            ng-repeat="category in categories"
+            >{{category.name}}</a></li>
           </ul>
         </li>
         <li data-ng-class="{open: $state.includes('courses')}">
@@ -144,7 +137,7 @@
         <div class="display-inline wrapper-logo">
           <div class="display-inline">
             <a ui-sref="user.datos" title="ImpactBTL" class="logo">
-              <img src="/logo-purple.png" width="52" alt="Wit U" />
+              <img src="/logo-purple.png" width="150" alt="Wit U" />
             </a>
           </div>
         </div>
